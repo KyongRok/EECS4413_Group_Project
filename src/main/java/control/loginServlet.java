@@ -36,6 +36,8 @@ public class loginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		//if account exits and password is correct, login
+		//else give incorrect password and forgot password? text
 	}
 
 }
