@@ -18,7 +18,7 @@ class LoginButton extends HTMLElement{
 	connectedCallback(){
 		//edit action
 		this.innerHTML = `
-			<input type="submit" value ='login'>
+			<input type="submit" name="todo" value ='login'>
 		
 		`;
 	}
@@ -30,7 +30,7 @@ customElements.define("login-button",LoginButton);
 class RegisterButton extends HTMLElement{
 	connectedCallback(){
 		this.innerHTML = `
-		<input type="submit" value ='register'>
+		<input type="submit" name = "todo" value ='register'>
 		`;
 	}
 }

@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class loginServlet
@@ -27,17 +28,37 @@ public class loginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
-		//if account exits and password is correct, login
-		//else give incorrect password and forgot password? text
+		String todo = request.getParameter("todo");
+		
+		//if button pressed is login make new session and try login
+		if(todo.equals("login")) {
+			String username = request.getParameter("username");
+			String password = request.getParameter("password");
+			HttpSession session = request.getSession(true);
+			
+			//if user login-info is correct
+			synchronized(session) {
+				//in the session, get user info, cart and set it as attribute
+				//then send the user over to shop.html.
+			}
+			//from DB, take username and test, if it exits, check password
+			//if username is not in DB, give client message, username does not exists.
+			//if password is wrong, give client message, invalid password.
+			//if all correct, bring them to shop page with session created
+			//we connect our this session with cart, order and client information from DB
+			
+		}else if(todo.equals("register")) {
+			//else if button pressed is register, bring client to register page.
+			//register servlet.
+		}
+		
 	}
 
 }
