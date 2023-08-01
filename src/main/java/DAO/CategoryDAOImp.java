@@ -102,7 +102,7 @@ public class CategoryDAOImp implements CategoryDAO {
 	}
 
 	@Override
-	public Category searchByCategories(int cate_id) {
+	public Category searchByCategoriesId(int cate_id) {
 		//searches items with categoryid of cate_id
         Connection con = null;
         String sql = "select * from category where category_id = '" + cate_id +"'";
@@ -123,5 +123,24 @@ public class CategoryDAOImp implements CategoryDAO {
         closeConnection(con);
         return category;
 	}
+
+	@Override
+	public Category searchByCategoriesName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Category> searchByMultipleCategoriesName(String[] categories) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Category> serachByMultipleCategoriesId(int[] category_ids) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

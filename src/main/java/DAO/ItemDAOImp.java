@@ -13,12 +13,6 @@ public class ItemDAOImp implements ItemDAO {
 	}
 
 	@Override
-	public List<Item> SearchByCategory(int cate_id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public List<Item> SearchByKeyWord(String target) {
 		// TODO Auto-generated method stub
 		return null;
@@ -36,5 +30,31 @@ public class ItemDAOImp implements ItemDAO {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public List<Item> SearchByCategoryId(int cate_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Item> SearchByCategoryName(String cate_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Item> SearchByMultipleCategoriesName(String[] categories) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Item> SearchByMultipleCategoriesId(int[] category_ids) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
 	
 }
