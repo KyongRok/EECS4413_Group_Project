@@ -58,7 +58,7 @@ public class CategoryDAOImp implements CategoryDAO {
     }
 	
 	@Override
-	public List<Category> searchByCategories(String target) {
+	public List<Category> searchByCategorieskeyword(String target) {
 		//searches category by target string
 		List<Category> categories = new ArrayList<>();
         Connection con = null;
@@ -99,6 +99,29 @@ public class CategoryDAOImp implements CategoryDAO {
             e.printStackTrace();
         }
         closeConnection(con);
+	}
+
+	@Override
+	public Category searchByCategories(int cate_id) {
+		//searches items with categoryid of cate_id
+        Connection con = null;
+        String sql = "select * from category where category_id = '" + cate_id +"'";
+        Category category = new Category();
+        try {
+            con = getConnection();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+            	
+                category.setCategoryID(rs.getInt("category_id"));
+                category.setCategoryName(rs.getString("category_name"));
+                
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        closeConnection(con);
+        return category;
 	}
 
 }
