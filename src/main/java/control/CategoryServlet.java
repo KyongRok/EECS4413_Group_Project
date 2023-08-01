@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import DAO.CategoryDAO;
 import model.Category;
+import DAO.CategoryDAOImp;
 
 import java.io.IOException;
 import java.util.List;
@@ -16,7 +17,7 @@ import java.util.List;
 public class CategoryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        CategoryDAO categoryDAO = new CategoryDAO();
+        CategoryDAO categoryDAO = new CategoryDAOImp();
         List<Category> categories = categoryDAO.getAllCategories();
         request.setAttribute("categories", categories);
         request.getRequestDispatcher("/categories.jsp").forward(request, response);
