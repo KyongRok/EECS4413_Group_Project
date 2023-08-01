@@ -23,6 +23,13 @@ public class User_info {
 		this.last_name = ln;
 	}
 	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	public int getUserId() {
 		return this.user_id;
 	}

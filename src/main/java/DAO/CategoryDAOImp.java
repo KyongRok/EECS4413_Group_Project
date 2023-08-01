@@ -85,17 +85,16 @@ public class CategoryDAOImp implements CategoryDAO {
 		//for admin use
 		Connection con = null;
        
-    
         try {
             con = getConnection();
             PreparedStatement stm = con.prepareStatement("insert into category (category_name) values (?)",
             		Statement.RETURN_GENERATED_KEYS);
             stm.setString(1, categoryName);
-            ResultSet rs = stm.executeQuery();
-            ResultSet generatedKeys = stm.getGeneratedKeys();
-			if (generatedKeys.next()) {
-				
-			}
+            stm.executeQuery();
+//            ResultSet generatedKeys = stm.getGeneratedKeys();
+//			if (generatedKeys.next()) {
+//				
+//			}
         } catch (Exception e) {
             e.printStackTrace();
         }
