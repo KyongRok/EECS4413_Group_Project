@@ -1,10 +1,12 @@
-package control;
+package DAO;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import model.Category;
 
 public class CategoryDAO {
     public List<Category> getAllCategories() {
