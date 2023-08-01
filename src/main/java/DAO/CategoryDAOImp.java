@@ -12,36 +12,25 @@ import java.util.List;
 import model.Category;
 
 public class CategoryDAOImp implements CategoryDAO {
-    
-	static {
+    Connection con;
+    DatabaseConnection connection;
+	public void init() {
+		connection = new DatabaseConnection();
 		try {
-			Class.forName("org.sqlite.JDBC");
-		} catch (ClassNotFoundException ex) {
-		}
-	}
-
-	private Connection getConnection() throws SQLException {
-		
-		 return DriverManager.getConnection("jdbc:sqlite:C:\\Users\\kyong\\git\\EECS4413_Group_Project\\src\\main\\webapp\\database.db");
-	}
-
-	private void closeConnection(Connection connection) {
-		if (connection == null)
-			return;
-		try {
-			connection.close();
-		} catch (SQLException ex) {
+			this.con = connection.getConnection();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	
 	@Override
 	public List<Category> getAllCategories() {
 		//lists all categories
+		init();
         List<Category> categories = new ArrayList<>();
-        Connection con = null;
         String sql = "select * from category";
         try {
-            con = getConnection();
             PreparedStatement stmt = con.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
@@ -53,18 +42,18 @@ public class CategoryDAOImp implements CategoryDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        closeConnection(con);
+        connection.closeConnection(con);
         return categories;
     }
 	
 	@Override
 	public List<Category> searchByCategorieskeyword(String target) {
 		//searches category by target string
+		init();
 		List<Category> categories = new ArrayList<>();
-        Connection con = null;
+       
         String sql = "select * from category where category_name like '%" + target.trim() + "%'";
         try {
-            con = getConnection();
             PreparedStatement stmt = con.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
@@ -76,17 +65,15 @@ public class CategoryDAOImp implements CategoryDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        closeConnection(con);
+        connection.closeConnection(con);
         return categories;
 	}
 	
 	@Override
 	public void insertNewCategory(String categoryName) {
 		//for admin use
-		Connection con = null;
-       
+		init();
         try {
-            con = getConnection();
             PreparedStatement stm = con.prepareStatement("insert into category (category_name) values (?)",
             		Statement.RETURN_GENERATED_KEYS);
             stm.setString(1, categoryName);
@@ -98,17 +85,17 @@ public class CategoryDAOImp implements CategoryDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        closeConnection(con);
+       connection.closeConnection(con);
 	}
 
 	@Override
 	public Category searchByCategoriesId(int cate_id) {
 		//searches items with categoryid of cate_id
-        Connection con = null;
+		init();
         String sql = "select * from category where category_id = '" + cate_id +"'";
         Category category = new Category();
         try {
-            con = getConnection();
+            
             PreparedStatement stmt = con.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
@@ -120,7 +107,7 @@ public class CategoryDAOImp implements CategoryDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        closeConnection(con);
+        connection.closeConnection(con);
         return category;
 	}
 

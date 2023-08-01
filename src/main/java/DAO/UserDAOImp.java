@@ -10,34 +10,22 @@ import java.sql.Statement;
 import model.User_info;
 
 public class UserDAOImp implements UserDAO {
-	
-	static {
+Connection con;
+DatabaseConnection connection;
+	public void init() {
+		connection = new DatabaseConnection();
 		try {
-			Class.forName("org.sqlite.JDBC");
-		} catch (ClassNotFoundException ex) {
-		}
-	}
-
-	private Connection getConnection() throws SQLException {
-		
-		 return DriverManager.getConnection("jdbc:sqlite:C:\\Users\\kyong\\git\\EECS4413_Group_Project\\src\\main\\webapp\\database.db");
-	}
-
-	private void closeConnection(Connection connection) {
-		if (connection == null)
-			return;
-		try {
-			connection.close();
-		} catch (SQLException ex) {
+			this.con = connection.getConnection();
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 	}
 	
 	@Override
 	public void insertNewUser(int id, String fn, String ln, String email, String password) {
-		Connection con = null;
-	       
+		init();
         try {
-            con = getConnection();
+            
             PreparedStatement stm = con.prepareStatement("insert into user_info (user_id,first_name,last_name,"
             		+ "email,password) values (?,?,?,?,?)",
             		Statement.RETURN_GENERATED_KEYS);
@@ -51,32 +39,31 @@ public class UserDAOImp implements UserDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        closeConnection(con);
+       connection.closeConnection(con);
 		
 	}
 
 	@Override
 	public void deleteUser(int id) {
-		// TODO Auto-generated method stub
-		Connection con = null;
+		init();
 		try {
-			con = getConnection();
+			
 			PreparedStatement stm = con.prepareStatement("delete from user_info where id = ?");
 			stm.setInt(1, id);
 			stm.execute();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		closeConnection(con);
+		connection.closeConnection(con);
 	}
 
 	@Override
 	public User_info get_userInfo(int user_id) {
-		Connection con = null;
+		init();
 		User_info u = new User_info();
 		String sql = "select * from user_info where user_id = " + user_id;
 		try {
-			con = getConnection();
+			
 			PreparedStatement stm = con.prepareStatement(sql);
 			ResultSet rs = stm.executeQuery();
 			while(rs.next()) {
@@ -90,7 +77,7 @@ public class UserDAOImp implements UserDAO {
 			e.printStackTrace();
 		}
 		
-		closeConnection(con);
+		connection.closeConnection(con);
 		return u;
 	}
 }

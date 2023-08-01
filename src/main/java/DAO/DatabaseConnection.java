@@ -2,19 +2,27 @@ package DAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DatabaseConnection {
-    private static Connection connection;
+	public DatabaseConnection() {
+		
+	}
+	public Connection getConnection() throws SQLException {
+		
+		try {
+			Class.forName("org.sqlite.JDBC");
+		} catch (ClassNotFoundException ex) {
+		}
+		 return DriverManager.getConnection("jdbc:sqlite:C:\\Users\\kyong\\git\\EECS4413_Group_Project\\src\\main\\webapp\\database.db");
+	}
 
-    public static Connection getConnection() {
-        if (connection == null) {
-            try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_retail_store", "username", "password");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        return connection;
-    }
+	public void closeConnection(Connection connection) {
+		if (connection == null)
+			return;
+		try {
+			connection.close();
+		} catch (SQLException ex) {
+		}
+	}
 }

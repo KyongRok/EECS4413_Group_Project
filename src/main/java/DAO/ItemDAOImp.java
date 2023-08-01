@@ -1,11 +1,22 @@
 package DAO;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 import model.Item;
 
 public class ItemDAOImp implements ItemDAO {
-
+Connection con;
+DatabaseConnection connection;
+	public void init() {
+		connection = new DatabaseConnection();
+		try {
+			this.con = connection.getConnection();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 	@Override
 	public List<Item> ShowAllItem() {
 		// TODO Auto-generated method stub
