@@ -18,7 +18,7 @@ public class CategoryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         CategoryDAO categoryDAO = new CategoryDAOImp();
-        List<Category> categories = categoryDAO.getAllCategories();
+        //List<Category> categories = categoryDAO.getAllCategories();
         request.setAttribute("categories", categories);
         request.getRequestDispatcher("/categories.jsp").forward(request, response);
     }
