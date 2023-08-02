@@ -73,4 +73,8 @@ public class Item {
 	public void setPicture(String url) {
 		this.picture = url;
 	}
+	
+	public void setQuantity(int qty) {
+		this.quantity = qty;
+	}
 }

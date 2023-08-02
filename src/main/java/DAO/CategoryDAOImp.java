@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Category;
+import model.Item;
 
 public class CategoryDAOImp implements CategoryDAO {
     Connection con;
@@ -25,109 +26,99 @@ public class CategoryDAOImp implements CategoryDAO {
 	}
 	
 	@Override
-	public List<Category> getAllCategories() {
-		//lists all categories
+	public List<Item> getAllCategories() {
+		//lists all categories item
 		init();
-        List<Category> categories = new ArrayList<>();
-        String sql = "select * from category";
+        List<Item> items = new ArrayList<>();
+        String sql = "select * from item "
+        		+ "inner join category on item.category_id = category.category_id";
         try {
             PreparedStatement stmt = con.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-            	Category category = new Category();
-                category.setCategoryID(rs.getInt("category_id"));
-                category.setCategoryName(rs.getString("category_name"));
-                categories.add(category);
+            	Item item = new Item();
+            	item.setItemId(rs.getInt("item_id"));
+                item.setItemName(rs.getString("item_name"));
+                item.setDescription(rs.getString("description"));
+                item.setCategoryId(rs.getInt("category_id"));
+                item.setBrand(rs.getString("brand"));
+                item.setQuantity(rs.getInt("quantity"));
+                item.setPicture(rs.getString("picture"));
+                item.setPrice(rs.getInt("price"));
+                items.add(item);
+            	
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         connection.closeConnection(con);
-        return categories;
+        return items;
     }
 	
 	@Override
-	public List<Category> searchByCategorieskeyword(String target) {
-		//searches category by target string
+	public List<Item> searchByCategorieskeyword(String target) {
+		//searches items by target string
 		init();
-		List<Category> categories = new ArrayList<>();
+		List<Item> items = new ArrayList<>();
        
-        String sql = "select * from category where category_name like '%" + target.trim() + "%'";
+        String sql = "select * from item inner join category on item.category_id = category.category_id"
+        		+ "where category_name like '%" + target.trim() + "%'"
+        		+ "or item_name like '%" + target.trim() + "%'"
+        		+ "or brand like '%" + target.trim() + "%'"
+        		+ "or gender like '%" + target.trim() + "%'"
+        		+ "or description like '%" + target.trim() + "%'"
+        		+ "or parts like '%" + target.trim() + "%'";
         try {
             PreparedStatement stmt = con.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-            	Category category = new Category();
-                category.setCategoryID(rs.getInt("category_id"));
-                category.setCategoryName(rs.getString("category_name"));
-                categories.add(category);
+            	Item item = new Item();
+            	item.setItemId(rs.getInt("item_id"));
+                item.setItemName(rs.getString("item_name"));
+                item.setDescription(rs.getString("description"));
+                item.setCategoryId(rs.getInt("category_id"));
+                item.setBrand(rs.getString("brand"));
+                item.setQuantity(rs.getInt("quantity"));
+                item.setPicture(rs.getString("picture"));
+                item.setPrice(rs.getInt("price"));
+                items.add(item);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         connection.closeConnection(con);
-        return categories;
+        return items;
 	}
 	
-	@Override
-	public void insertNewCategory(String categoryName) {
-		//for admin use
-		init();
-        try {
-            PreparedStatement stm = con.prepareStatement("insert into category (category_name) values (?)",
-            		Statement.RETURN_GENERATED_KEYS);
-            stm.setString(1, categoryName);
-            stm.executeQuery();
-//            ResultSet generatedKeys = stm.getGeneratedKeys();
-//			if (generatedKeys.next()) {
-//				
-//			}
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-       connection.closeConnection(con);
-	}
 
 	@Override
-	public Category searchByCategoriesId(int cate_id) {
-		//searches items with categoryid of cate_id
+	public List<Item> searchByCategoryNameAndGender(String categoryname, String gender) {
 		init();
-        String sql = "select * from category where category_id = '" + cate_id +"'";
-        Category category = new Category();
+		List<Item> items = new ArrayList<>();
         try {
-            
-            PreparedStatement stmt = con.prepareStatement(sql);
+            PreparedStatement stmt = con.prepareStatement("select * from item inner join category "
+            		+ "on item.category_id = category.category_id"
+            		+ " where category_name=? and gender=?");
+            stmt.setString(1, categoryname);
+            stmt.setString(2, gender);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-            	
-                category.setCategoryID(rs.getInt("category_id"));
-                category.setCategoryName(rs.getString("category_name"));
-                
+            	Item item = new Item();
+            	item.setItemId(rs.getInt("item_id"));
+                item.setItemName(rs.getString("item_name"));
+                item.setDescription(rs.getString("description"));
+                item.setCategoryId(rs.getInt("category_id"));
+                item.setBrand(rs.getString("brand"));
+                item.setQuantity(rs.getInt("quantity"));
+                item.setPicture(rs.getString("picture"));
+                item.setPrice(rs.getInt("price"));
+                items.add(item);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         connection.closeConnection(con);
-        return category;
+        return items;
 	}
-
-	@Override
-	public Category searchByCategoriesName(String name) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Category> searchByMultipleCategoriesName(String[] categories) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Category> serachByMultipleCategoriesId(int[] category_ids) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 
 }
