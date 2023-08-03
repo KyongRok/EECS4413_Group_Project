@@ -14,7 +14,7 @@
 <head>
 <title>Login - Bloom</title>
 <script type="text/javascript"
-	src="${pageContext.request.contextPath}/res/js/regLogin.js">
+	src="${pageContext.request.contextPath}/res/js/register.js">
 	;
 </script>
 
@@ -22,7 +22,7 @@
 	href="${pageContext.request.contextPath}/res/fonts/material-icon/css/material-design-iconic-font.min.css" />
 <link rel="StyleSheet"
 	href="${pageContext.request.contextPath}/res/css/regLogin.css"
-	type="text/css" title="cse4413" media="screen, print" />
+	type="text/css" title="4413" media="screen, print" />
 </head>
 <body>
 	<div class="main">
@@ -47,13 +47,18 @@
 								<input type="email" name="email" id="email" placeholder="Email" />
 							</div>
 							<div class="form-group">
+
+								<input type="text" name="username" id="username"
+									placeholder="Username" />
+							</div>
+							<div class="form-group">
 								<input type="password" name="password" id="password_reg"
 									placeholder="Password" />
 							</div>
 							<div class="form-group form-button">
-								<!-- Submit -->
+								
 								<input type="submit" name="signup" class="form-submit"
-									value="Register" />
+									value="Register"  />
 							</div>
 						</form>
 					</div>
@@ -63,56 +68,12 @@
 								src="${pageContext.request.contextPath}/res/images/signin-image.jpg"
 								alt="Sign up image" />
 						</figure>
-						<a href="#signin" class="signup-image-link">Already a member -
+						<a href="login.jsp" class="signup-image-link">Already a member -
 							Login</a>
 					</div>
 				</div>
 			</div>
 		</section>
-		<section class="sign-in">
-			<div class="container">
-				<div class="signin-content" id="signin">
-					<div class="signin-image">
-						<figure>
-							<img
-								src="${pageContext.request.contextPath}/res/images/signin-image2.jpg"
-								alt="Sign in image" />
-						</figure>
-						<a href="#signup" class="signup-image-link">Register</a>
-					</div>
-
-					<div class="signin-form">
-						<h2 class="form-title">Sign in</h2>
-						<form method="POST" class="register-form" id="login-form"
-							onsubmit="return validateLoginForm();">
-							<div class="form-group">
-
-								<input type="text" name="username" id="username"
-									placeholder="Username" />
-							</div>
-							<div class="form-group">
-
-								<input type="password" name="password" id="password"
-									placeholder="Password" />
-							</div>
-							<div class="form-group">
-								<!-- Remember me? -->
-								<input type="checkbox" name="remember-me" id="remember-me"
-									class="agree-term" /> <label for="remember-me"
-									class="label-agree-term"><span><span>.<!-- content --></span></span>
-									Remember me</label>
-							</div>
-							<div class="form-group form-button">
-
-								<input type="submit" name="signin" id="signin"
-									class="form-submit" value="Login" />
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</section>
-
 	</div>
 </body>
 	</html>
