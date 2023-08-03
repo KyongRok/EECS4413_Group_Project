@@ -27,14 +27,13 @@ DatabaseConnection connection;
         try {
             
             PreparedStatement stm = con.prepareStatement("insert into user_info (user_id,first_name,last_name,"
-            		+ "email,password) values (?,?,?,?,?)",
-            		Statement.RETURN_GENERATED_KEYS);
+            		+ "email,password) values (?,?,?,?,?)");
             stm.setInt(1, id);
             stm.setString(2, fn);
             stm.setString(3,ln);
             stm.setString(4,email);
             stm.setString(5,password);
-            stm.executeQuery();
+            stm.execute();
            
         } catch (Exception e) {
             e.printStackTrace();
@@ -48,7 +47,7 @@ DatabaseConnection connection;
 		init();
 		try {
 			
-			PreparedStatement stm = con.prepareStatement("delete from user_info where id = ?");
+			PreparedStatement stm = con.prepareStatement("delete from user_info where user_id = ?");
 			stm.setInt(1, id);
 			stm.execute();
 		}catch(Exception e) {

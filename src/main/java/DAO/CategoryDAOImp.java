@@ -60,17 +60,19 @@ public class CategoryDAOImp implements CategoryDAO {
 		//searches items by target string
 		init();
 		List<Item> items = new ArrayList<>();
+     
+        String sql = "select * from item inner join category "
+        		+ "on item.category_id = category.category_id "
+        		+ "where category_name like '%" + target.trim() +"%'"
+        		+ " or item_name like '%" + target.trim() + "%'"
+        		+ " or brand like '%" + target.trim() + "%'"
+        		+ " or gender like '%" + target.trim() + "%'"
+        		+ " or description like '%" + target.trim() + "%'"
+        		+ " or parts like '%" + target.trim() + "%'";
        
-        String sql = "select * from item inner join category on item.category_id = category.category_id"
-        		+ "where category_name like '%" + target.trim() + "%'"
-        		+ "or item_name like '%" + target.trim() + "%'"
-        		+ "or brand like '%" + target.trim() + "%'"
-        		+ "or gender like '%" + target.trim() + "%'"
-        		+ "or description like '%" + target.trim() + "%'"
-        		+ "or parts like '%" + target.trim() + "%'";
         try {
-            PreparedStatement stmt = con.prepareStatement(sql);
-            ResultSet rs = stmt.executeQuery();
+        	PreparedStatement statement =  con.prepareStatement(sql);
+			ResultSet rs =  statement.executeQuery();
             while (rs.next()) {
             	Item item = new Item();
             	item.setItemId(rs.getInt("item_id"));
