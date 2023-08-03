@@ -12,9 +12,9 @@ public class test {
 				List<Item> items = new ArrayList<>();
 		items = d.searchByCategorieskeyword("casual");
 //		UserDAO u = new UserDAOImp();
-		
+		items = d.sortPriceLowToHigh(items);
 		for(int i = 0; i < items.size(); i++) {
-			System.out.println(items.get(i).getDescription());
+			System.out.println(items.get(i).getPrice());
 		}
 		//u.insertNewUser(1, "admin", "admin", "admin@gmail.com", "1234");
 		//u.deleteUser(1);
