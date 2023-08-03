@@ -175,6 +175,7 @@ public class CategoryDAOImp implements CategoryDAO {
 		
 		Collections.sort(items, new Comparator<Item>()
 				{
+			
 					public int compare(Item first, Item second) {
 						if(first.getPrice() >= second.getPrice()) {
 							return 1;

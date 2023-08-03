@@ -13,6 +13,7 @@ public class test {
 		items = d.searchByCategorieskeyword("casual");
 //		UserDAO u = new UserDAOImp();
 		items = d.sortPriceLowToHigh(items);
+		
 		for(int i = 0; i < items.size(); i++) {
 			System.out.println(items.get(i).getPrice());
 		}
