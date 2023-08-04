@@ -3,12 +3,16 @@
  */
 function validateRegistrationForm() {
     console.log("Validating registration form...");
+    
+    var username = document.getElementById('username').value;
     var firstName = document.getElementById('fname').value;
     var lastName = document.getElementById('lname').value;
     var email = document.getElementById('email').value;
-    var username = document.getElementById('username').value;
     var password = document.getElementById('password_reg').value;
-
+    if (!username.trim()) {
+        alert("username cannot be blank");
+        return false;
+    }
     if (!firstName.trim()) {
         alert("First Name can't be blank");
         return false;
@@ -22,10 +26,7 @@ function validateRegistrationForm() {
         return false;
     }
     
-    if (!username.trim()) {
-        alert("Username cannot be blank");
-        return false;
-    }
+
     if (password.length < 8) {
         alert("Password must be at least 8 characters long.");
         return false;
