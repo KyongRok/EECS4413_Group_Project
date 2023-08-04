@@ -1,4 +1,5 @@
 package control;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,25 +9,31 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import DAO.UserDAOImp;
 import model.User_info;
-@WebServlet("/loginServlet")
+
+@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-
+    public LoginServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
         UserDAOImp userDAO = new UserDAOImp();
-        User_info user = userDAO.loginUser(email, password);
+        int login_flag = userDAO.user_login(email, password);
 
-        if (user != null) {
+        if (login_flag == 1) {
+            User_info user = userDAO.get_userInfo(email, password);
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
-            response.sendRedirect("home.jsp");
+            request.getRequestDispatcher("Home.jsp").forward(request, response);
         } else {
-            response.sendRedirect("login.jsp");
+            // User does not exist or invalid credentials
+            request.setAttribute("loginError", "Invalid email or password");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }
 }
-
