@@ -14,7 +14,7 @@
 <head>
 <title>Login - Bloom</title>
 <script type="text/javascript"
-	src="${pageContext.request.contextPath}/res/js/regLogin.js">
+	src="${pageContext.request.contextPath}/res/js/login.js">
 	;
 </script>
 
@@ -40,12 +40,12 @@
 
 					<div class="signin-form">
 						<h2 class="form-title">Sign in</h2>
-						<form method="POST" class="register-form" id="login-form"
+						<form method="post" action="LoginServlet" class="register-form" id="login-form"
 							onsubmit="return validateLoginForm();">
 							<div class="form-group">
 
-								<input type="text" name="username" id="username"
-									placeholder="Username" />
+								<input type="text" name="email" id="email"
+									placeholder="email" />
 							</div>
 							<div class="form-group">
 
@@ -65,6 +65,9 @@
 									class="form-submit" value="Login" />
 							</div>
 						</form>
+						<c:if test="${not empty loginError}">
+                            <p class="error-message">${loginError}</p>
+                        </c:if>
 					</div>
 				</div>
 			</div>
