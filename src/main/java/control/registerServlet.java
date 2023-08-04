@@ -24,7 +24,7 @@ public class registerServlet extends HttpServlet {
     	String fn = request.getParameter("fname");
         String ln = request.getParameter("lname");
         String email = request.getParameter("email");
-        String password = request.getParameter("password_reg");
+        String password = request.getParameter("password");
         
         UserDAOImp userDAO = new UserDAOImp();
         User_info u = new User_info();
@@ -34,14 +34,13 @@ public class registerServlet extends HttpServlet {
         u.setEmail(email);
         userDAO.insertNewUser(fn, ln, email, password);
         u.setUser_id(userDAO.get_userInfo(email, password).getUserId());
-        int login_flag = userDAO.user_login(email, password);
-        if(login_flag == 1) {
+//        int login_flag = userDAO.user_login(email, password);
+//        if(login_flag == 1) {
         	HttpSession session = request.getSession();
             session.setAttribute("user", u);
             request.getRequestDispatcher("Home.jsp").forward(request, response);
             //send to homeServlet and in there we check the user info and -> show give a somethign
-            //that user can see and tell that they are logined
-            
-        }
+            //that user can see and tell that they are logined   
+        //}
     }
 }

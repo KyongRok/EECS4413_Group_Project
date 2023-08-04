@@ -28,7 +28,6 @@ DatabaseConnection connection;
             
             PreparedStatement stm = con.prepareStatement("insert into user_info (user_id,first_name,last_name,"
             		+ "email,password) values (?,?,?,?,?)");
-            
             stm.setString(2, fn);
             stm.setString(3,ln);
             stm.setString(4,email);
@@ -60,10 +59,12 @@ DatabaseConnection connection;
 	public User_info get_userInfo(String email,String password) {
 		init();
 		User_info u = new User_info();
-		String sql = "select * from user_info where email = " + email + "and password = " + password;
+		
 		try {
 			
-			PreparedStatement stm = con.prepareStatement(sql);
+			PreparedStatement stm = con.prepareStatement ("select * from user_info where email = ? and password = ?");
+			stm.setString(1, email);
+			stm.setString(2 ,password);
 			ResultSet rs = stm.executeQuery();
 			while(rs.next()) {
 				u.setFirst_name(rs.getString("first_name"));
@@ -84,11 +85,11 @@ DatabaseConnection connection;
 	public int user_login(String email, String password) {
 		init();
 		int login_flag = 0;
-		
-		String sql = "select * from user_info where email = " + email + "and password = " + password;
 		try {
 			
-			PreparedStatement stm = con.prepareStatement(sql);
+			PreparedStatement stm = con.prepareStatement ("select * from user_info where email = ? and password = ?");
+			stm.setString(1, email);
+			stm.setString(2 ,password);
 			ResultSet rs = stm.executeQuery();
 			while(rs.next()) {
 				login_flag++;

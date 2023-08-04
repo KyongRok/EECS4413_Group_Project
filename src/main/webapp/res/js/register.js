@@ -35,5 +35,5 @@ function validateRegistrationForm() {
     //window.location.href = "Home.jsp";
 
     // Return false to prevent form submission (since we're redirecting manually)
-    return false;
+    return ture;
 }
