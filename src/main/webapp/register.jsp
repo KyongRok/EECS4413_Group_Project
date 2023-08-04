@@ -33,8 +33,14 @@
 					<div class="signup-form">
 						<h2 class="form-title">Create an Account</h2>
 
-						<form method="POST" class="register-form" id="register-form"
+						<!-- Add the form with method="post" and action="registerServlet" -->
+						<form method="post" action="registerServlet" class="register-form" id="register-form"
 							onsubmit="return validateRegistrationForm();">
+							<div class="form-group">
+
+								<input type="text" name="username" id="username"
+									placeholder="Username" />
+							</div>
 							<div class="form-group">
 								<input type="text" name="fname" id="fname"
 									placeholder="First Name" />
@@ -46,11 +52,7 @@
 							<div class="form-group">
 								<input type="email" name="email" id="email" placeholder="Email" />
 							</div>
-							<div class="form-group">
-
-								<input type="text" name="username" id="username"
-									placeholder="Username" />
-							</div>
+							
 							<div class="form-group">
 								<input type="password" name="password" id="password_reg"
 									placeholder="Password" />
@@ -76,5 +78,5 @@
 		</section>
 	</div>
 </body>
-	</html>
+</html>
 </jsp:root>
