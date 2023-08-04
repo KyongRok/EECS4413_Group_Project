@@ -105,7 +105,10 @@
 				<!-- User Login Info -->
 				<!--                <div class="classynav">-->
 				<div class="user-login-info ">               
-					<a href="login"><img src="${pageContext.request.contextPath}/res/images/user.svg" alt=""/></a>
+					<a href="${pageContext.request.contextPath}/profile.jsp"><img src="${pageContext.request.contextPath}/res/images/user.svg" alt=""/></a>
+				</div>
+				<div class="user-login-info ">               
+					<a href="${pageContext.request.contextPath}/LogoutServlet"><img src="${pageContext.request.contextPath}/res/images/logout.png" alt=""/></a>
 				</div>
 				<!--                </div>-->
 				<!-- Cart Area -->
