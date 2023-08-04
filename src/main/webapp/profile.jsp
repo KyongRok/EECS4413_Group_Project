@@ -4,12 +4,13 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:f="http://java.sun.com/jsp/jstl/fmt" version="2.0">
 	<jsp:directive.page contentType="text/html; charset=ISO-8859-1"
-		pageEncoding="ISO-8859-1" session="false" />
+		pageEncoding="ISO-8859-1" session="true" />
 	<jsp:output doctype-root-element="html"
 		doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
 		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
 		omit-xml-declaration="true" />
 	<html xmlns="http://www.w3.org/1999/xhtml">
+	
 <head>
     <title>Profile</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/core-style.css"/>
@@ -119,10 +120,10 @@
                         <div class="cart-page-heading mb-30">
                             <h5>Profile Details</h5>
                         </div>
-                        <p>First Name: ${sessionScope.firstName}</p>
-                        <p>Last Name: ${sessionScope.lastName}</p>
-                        <p>Email: ${sessionScope.email}</p>
-                        <p>Username(ID): ${sessionScope.username}</p>
+                        <p>First Name: ${sessionScope.user.firstName}</p>
+                        <p>Last Name: ${sessionScope.user.lastName}</p>
+                        <p>Email: ${sessionScope.user.email}</p>
+                        <p>(ID): ${sessionScope.user.userId}</p>
                         <p><a href="Home.jsp">Back to Home</a></p>
                     </div>
                 </div>

@@ -27,7 +27,7 @@ public class LoginServlet extends HttpServlet {
 
         if (login_flag == 1) {
             User_info user = userDAO.get_userInfo(email, password);
-            HttpSession session = request.getSession();
+            HttpSession session = request.getSession(true);
             session.setAttribute("user", user);
             request.getRequestDispatcher("Home.jsp").forward(request, response);
         } else {

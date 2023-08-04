@@ -20,7 +20,7 @@ public class registerServlet extends HttpServlet {
 	}
     protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
     	//int id = Integer.parseInt(request.getParameter("username"));
-    	System.out.println("hello");
+ 
     	String fn = request.getParameter("fname");
         String ln = request.getParameter("lname");
         String email = request.getParameter("email");
@@ -36,9 +36,11 @@ public class registerServlet extends HttpServlet {
         u.setUser_id(userDAO.get_userInfo(email, password).getUserId());
 //        int login_flag = userDAO.user_login(email, password);
 //        if(login_flag == 1) {
-        	HttpSession session = request.getSession();
+        HttpSession session = request.getSession(true);
+        synchronized (session) {
             session.setAttribute("user", u);
             request.getRequestDispatcher("Home.jsp").forward(request, response);
+            }
             //send to homeServlet and in there we check the user info and -> show give a somethign
             //that user can see and tell that they are logined   
         //}

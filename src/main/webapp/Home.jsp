@@ -104,9 +104,15 @@
 				</div>
 				<!-- User Login Info -->
 				<!--                <div class="classynav">-->
-				<div class="user-login-info ">               
-					<a href="${pageContext.request.contextPath}/profile.jsp"><img src="${pageContext.request.contextPath}/res/images/user.svg" alt=""/></a>
+				<form action='profileServlet' method='post'>
+				<div class="user-login-info ">
+				               
+					<input name='profile' type='image' src="${pageContext.request.contextPath}/res/images/user.svg" 
+					width='50px' height='50px'
+					alt="submit"/>
+					
 				</div>
+				</form>
 				<div class="user-login-info ">               
 					<a href="${pageContext.request.contextPath}/LogoutServlet"><img src="${pageContext.request.contextPath}/res/images/logout.png" alt=""/></a>
 				</div>
