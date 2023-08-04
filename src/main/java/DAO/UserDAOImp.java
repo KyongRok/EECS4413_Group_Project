@@ -22,13 +22,13 @@ DatabaseConnection connection;
 	}
 	
 	@Override
-	public void insertNewUser(int id, String fn, String ln, String email, String password) {
+	public void insertNewUser(String fn, String ln, String email, String password) {
 		init();
         try {
             
             PreparedStatement stm = con.prepareStatement("insert into user_info (user_id,first_name,last_name,"
             		+ "email,password) values (?,?,?,?,?)");
-            stm.setInt(1, id);
+            
             stm.setString(2, fn);
             stm.setString(3,ln);
             stm.setString(4,email);
@@ -57,10 +57,10 @@ DatabaseConnection connection;
 	}
 
 	@Override
-	public User_info get_userInfo(int user_id) {
+	public User_info get_userInfo(String email,String password) {
 		init();
 		User_info u = new User_info();
-		String sql = "select * from user_info where user_id = " + user_id;
+		String sql = "select * from user_info where email = " + email + "and password = " + password;
 		try {
 			
 			PreparedStatement stm = con.prepareStatement(sql);
@@ -68,7 +68,7 @@ DatabaseConnection connection;
 			while(rs.next()) {
 				u.setFirst_name(rs.getString("first_name"));
 				u.setLast_name(rs.getString("last_name"));
-				u.setUser_id(rs.getInt(user_id));
+				u.setUser_id(rs.getInt("user_id"));
 				u.setEmail(rs.getString("email"));
 				u.setPassword(rs.getString("password"));
 			}
@@ -78,5 +78,26 @@ DatabaseConnection connection;
 		
 		connection.closeConnection(con);
 		return u;
+	}
+
+	@Override
+	public int user_login(String email, String password) {
+		init();
+		int login_flag = 0;
+		
+		String sql = "select * from user_info where email = " + email + "and password = " + password;
+		try {
+			
+			PreparedStatement stm = con.prepareStatement(sql);
+			ResultSet rs = stm.executeQuery();
+			while(rs.next()) {
+				login_flag++;
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		connection.closeConnection(con);
+		return login_flag;
 	}
 }

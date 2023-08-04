@@ -32,7 +32,7 @@ function validateRegistrationForm() {
         return false;
     }
     // Assuming registration is successful, redirect to Home.jsp
-    window.location.href = "Home.jsp";
+    //window.location.href = "Home.jsp";
 
     // Return false to prevent form submission (since we're redirecting manually)
     return false;
