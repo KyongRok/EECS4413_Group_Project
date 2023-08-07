@@ -34,7 +34,7 @@ h6 {
   font-family: "Ubuntu", sans-serif; }
 
 p {
-  color: rgb(251, 200, 242);
+  color: rgb(186, 84, 155);
   font-size: 14px;
   line-height: 2;
   font-weight: 400; }
@@ -44,7 +44,7 @@ a {
   transition: all 500ms ease 0s;
   text-decoration: none;
   outline: 0 solid transparent;
-  color: rgb(251, 200, 242);
+  color: rgb(186, 84, 155);
   font-weight: 600;
   font-size: 12px; }
   a:hover, a:focus {
@@ -52,7 +52,7 @@ a {
     transition: all 500ms ease 0s;
     text-decoration: none;
     outline: 0 solid transparent;
-    color: rgb(251, 200, 242);
+    color: rgb(186, 84, 155);
     font-weight: 600;
     font-size: 12px; }
 
@@ -144,6 +144,63 @@ img {
 .section-padding-0-80 {
   padding-top: 0;
   padding-bottom: 80px; }
+/* Existing CSS styles ... */
+
+.item-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    list-style: none;
+    padding: 0;
+}
+
+.item {
+    width: calc(25% - 20px); /* Adjust the width as needed for your layout */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+}
+
+.item a {
+    display: block;
+}
+
+.item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.item-details {
+    margin-top: 10px;
+}
+
+.item h3 {
+    margin: 0;
+}
+
+.item-price {
+    color: rgb(255, 128, 192); /* Adjust color as needed */
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.item button {
+    background-color: rgb(255, 128, 192); /* Adjust color as needed */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.item button:hover {
+    background-color: rgb(255, 128, 192); /* Adjust color as needed */
+}
+
+/* Rest of the CSS styles ... */
 
 /* Section Heading */
 .section-heading {
@@ -203,7 +260,7 @@ img {
 
 /* ScrollUp */
 #scrollUp {
-  background-color: #ff084e;
+  background-color: rgb(255, 117, 186);
   border-radius: 0;
   bottom: 60px;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
@@ -231,12 +288,12 @@ img {
   text-transform: uppercase;
   font-size: 12px;
   line-height: 50px;
-  background-color: rgb(255, 117, 186);
+  background-color: rgb(199, 44, 152);
   letter-spacing: 1.5px;
   font-weight: 600; }
   .essence-btn:hover, .essence-btn:focus {
     color: #ffffff;
-    background-color: #dc0345; }
+    background-color: rgb(255, 128, 192); }
 
 /* :: 4.0 Header Area CSS */
 .header_area {
@@ -379,9 +436,7 @@ img {
     .header_area .user-login-info a img,
     .header_area .cart-area a img {
       max-width: 20px; 
-/*AKIN ADDED/CHANGED THIS */
       position: relative; 
-/* AKIN ADDED/CHANGED THIS */
 	  top: 30px;  }
     .header_area .favourite-area a span,
     .header_area .user-login-info a span,
@@ -464,7 +519,7 @@ img {
     .right-side-cart-area .cart-button a span {
       font-family: "Ubuntu", sans-serif;
       font-size: 18px;
-      color: rgb(160, 24, 123);
+      color: rgb(199, 44, 152);
       font-weight: 700;
       position: absolute;
       top: -10px; }
@@ -715,7 +770,7 @@ img {
         height: 400px; } }
     .cta-area .cta-content h6 {
       font-size: 24px;
-      color: #dc0345;
+      color: rgb(255, 117, 186);
       margin-bottom: 10px; }
     .cta-area .cta-content h2 {
       font-size: 60px;
@@ -776,9 +831,9 @@ img {
       left: 20px;
       z-index: 10; }
       .single-product-wrapper .product-img .product-badge.offer-badge {
-        background-color: #dc0345; }
+        background-color: rgb(255, 117, 186); }
       .single-product-wrapper .product-img .product-badge.new-badge {
-        background-color: rgb(255, 128, 192); }
+        background-color: rgb(255, 117, 186); }
     .single-product-wrapper .product-img .product-favourite a {
       position: absolute;
       height: 25px;
@@ -840,7 +895,7 @@ img {
     cursor: pointer;
     color: #ccc; }
     .single-product-wrapper .favme.active {
-      color: #dc0345 !important; }
+      color: rgb(255, 117, 186) !important; }
     .single-product-wrapper .favme.is_animating {
       animation: favme-anime .5s; }
   .single-product-wrapper:hover .product-img .hover-img {
@@ -1007,7 +1062,7 @@ img {
       margin-bottom: 0;
       font-family: "Ubuntu", sans-serif;
       font-size: 24px;
-      color: #dc0345;
+      color: rgb(255, 117, 186);
       font-weight: 700; }
       @media only screen and (min-width: 768px) and (max-width: 991px) {
         .single_product_details_area .single_product_desc .product-price {
@@ -1051,13 +1106,13 @@ img {
       color: #ccc;
       font-size: 24px; }
       .single_product_details_area .single_product_desc .cart-fav-box .favme.active {
-        color: #dc0345 !important; }
+        color: rgb(255, 117, 186) !important; }
 
 /* :: 11.0 Footer Area CSS */
 .footer_area {
   position: relative;
   z-index: 1;
-  background-color: rgb(255, 128, 192);
+  background-color: rgb(186, 84, 155);
   padding: 70px 0 60px; }
   .footer_area .single_widget_area .footer_menu ul {
     display: -webkit-box;
@@ -1221,7 +1276,7 @@ img {
     height: 15px;
     margin: 0; }
   .widget.price .ui-slider-range.ui-corner-all.ui-widget-header {
-    background-color: rgb(255, 128, 192); }
+    background-color: rgb(199, 44, 152); }
   .widget.price .ui-slider-horizontal {
     height: 5px; }
   .widget.price .range-price {
@@ -1255,7 +1310,7 @@ img {
         .widget.color .widget-desc ul li a.color4 {
           background-color: rgb(255, 128, 192); }
         .widget.color .widget-desc ul li a.color5 {
-          background-color: #dc0647; }
+          background-color: rgb(255, 117, 186); }
         .widget.color .widget-desc ul li a.color6 {
           background-color: #fff56a; }
         .widget.color .widget-desc ul li a.color7 {
@@ -1322,7 +1377,7 @@ img {
       border-radius: 0;
       border: none; }
       .product-topbar .nice-select .list .option.selected {
-        color: rgb(160, 24, 123); }
+        color: rgb(186, 84, 155); }
 
 /* :: 14.0 Checkout Area CSS */
 .checkout_details_area form label {
@@ -1330,7 +1385,7 @@ img {
   text-transform: uppercase;
   font-weight: 600; }
   .checkout_details_area form label span {
-    color: rgb(160, 24, 123); }
+    color: rgb(199, 44, 152); }
 .checkout_details_area form .form-control {
   height: 42px;
   border: 1px solid #ebebeb;
@@ -1384,7 +1439,6 @@ img {
     line-height: 2;
     color: #9f9f9f; }
 
-/* :: 15.0 Blog Area CSS */
 .blog-wrapper {
   position: relative;
   z-index: 1; }
@@ -1642,7 +1696,6 @@ img {
           -webkit-transform: scale(1.2);
           transform: scale(1.2); }
 
-/* :: 16.0 Regular Page Area CSS */
 .regular-page-content-wrapper {
   position: relative;
   z-index: 1; }
@@ -1672,7 +1725,6 @@ img {
       font-weight: 600;
       color: rgba(0, 0, 0, 0.6); }
 
-/* :: 17.0 Contact Area CSS */
 .contact-area {
   position: relative;
   z-index: 1;
