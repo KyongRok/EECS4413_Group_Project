@@ -5,21 +5,50 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import DAO.CategoryDAO;
-import model.Category;
-import DAO.CategoryDAOImp;
-
 import java.io.IOException;
 import java.util.List;
-
-@WebServlet("/categories")
+import DAO.CategoryDAO;
+import DAO.CategoryDAOImp;
+import model.Item;
+@WebServlet("/category")
 public class CategoryServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        String category = request.getParameter("category");
+        String gender = request.getParameter("gender"); // Add gender parameter
         CategoryDAO categoryDAO = new CategoryDAOImp();
-        //List<Category> categories = categoryDAO.getAllCategories();
-        request.setAttribute("categories", categories);
-        request.getRequestDispatcher("/categories.jsp").forward(request, response);
+        String sort = request.getParameter("sort"); // Get sorting parameter
+
+        List<Item> items;
+
+        if (category != null && !category.isEmpty()) {
+            items = categoryDAO.searchByCategorieskeyword(category);
+        } else if (gender != null && (gender.equalsIgnoreCase("women") || gender.equalsIgnoreCase("men"))) {
+ 
+            items = categoryDAO.searchByCategoryNameAndGender(category, gender);
+        } else {
+            response.sendRedirect(request.getContextPath() + "/Home.jsp");
+            return;
+        }
+        if (sort != null) {
+            switch (sort) {
+                case "nameAToZ":
+                    items = categoryDAO.sortAlpAToZ(items);
+                    break;
+                case "nameZToA":
+                    items = categoryDAO.sortAlpZToA(items);
+                    break;
+                case "priceLowToHigh":
+                    items = categoryDAO.sortPriceLowToHigh(items);
+                    break;
+                case "priceHighToLow":
+                    items = categoryDAO.sortPriceHighToLow(items);
+                    break;
+                default:
+                    // Handle other cases or default sorting here
+                    break;
+            }
+        }
+        request.setAttribute("items", items);
+        request.getRequestDispatcher("/category.jsp").forward(request, response);
     }
 }
