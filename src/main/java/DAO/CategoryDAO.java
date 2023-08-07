@@ -14,5 +14,7 @@ public interface CategoryDAO {
 	public List<Item> sortPriceLowToHigh(List<Item> items);
 	public List<Item> sortAlpAToZ(List<Item> items);
 	public List<Item> sortAlpZToA(List<Item> items);
+	List<Item> getItemsByBrand(String brand);
+	
 	
 }
