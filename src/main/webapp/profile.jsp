@@ -43,34 +43,43 @@
 							<li><a href="#">Shop</a>
 								<div class="megamenu">
 									<ul class="single-mega cn-col-4">
-										<li class="title">Women's</li>
-										<li><a href="shop.html">Dresses</a></li>
-										<li><a href="shop.html">Shirts</a></li>
-										<li><a href="shop.html">Jackets</a></li>
-										<li><a href="shop.html">Bags</a></li>
-										<li><a href="shop.html">Accessories</a></li>
+									<li class="title">Women's</li>
+										<!-- Pass the gender parameter with value "womens" -->
+										<li><a
+											href="${pageContext.request.contextPath}/category?gender=women&amp;category=casual">Casual</a></li>
+										<li><a
+											href="${pageContext.request.contextPath}/category?gender=women&amp;category=formal">Formal</a></li>
+										<li><a
+											href="${pageContext.request.contextPath}/category?gender=women&amp;category=street">Street
+												Style</a></li>
+										<!-- Other items for Women's collection -->
 									</ul>
+									<!-- Men's Collection -->
 									<ul class="single-mega cn-col-4">
 										<li class="title">Men's</li>
-										<li><a href="shop.html">T-Shirts</a></li>
-										<li><a href="shop.html">Long sleeve Shirts</a></li>
-										<li><a href="shop.html">Shirts</a></li>
-										<li><a href="shop.html">Jackets</a></li>
-										<li><a href="shop.html">Accessories</a></li>
+										<!-- Pass the gender parameter with value "mens" -->
+										<li><a
+											href="${pageContext.request.contextPath}/category?gender=men&amp;category=casual">Casual</a></li>
+										<li><a
+											href="${pageContext.request.contextPath}/category?gender=men&amp;category=formal">Formal</a></li>
+										<li><a
+											href="${pageContext.request.contextPath}/category?gender=men&amp;category=street">Street
+												Style</a></li>
+										<!-- Other items for Men's collection -->
+									</ul>
+									<ul class="single-mega cn-col-4">
+										<li class="title">Brands</li>
+										<li><a href="${pageContext.request.contextPath}/itemsByBrand?brand=Boss">Boss</a></li>
+										<li><a href="${pageContext.request.contextPath}/itemsByBrand?brand=Nike">Nike</a></li>
+										<li><a href="${pageContext.request.contextPath}/itemsByBrand?brand=Zara">Zara</a></li>
+										<li><a href="${pageContext.request.contextPath}/itemsByBrand?brand=Adidas">Adidas</a></li>
 									</ul>
 									<div class="single-mega cn-col-4">
-										<img src="${pageContext.request.contextPath}/res/images/bag.jpg" alt=""/>
+										<img
+											src="${pageContext.request.contextPath}/res/images/bag.jpg"
+											alt="" />
 									</div>
 								</div></li>
-							<li><a href="#">Pages</a>
-								<ul class="dropdown">
-									<li><a href="Home.html">Home</a></li>
-									<li><a href="shop.html">Shop</a></li>
-									<li><a href="single-product-details.html">Product
-											Details</a></li>
-									<li><a href="checkOut.jsp">Checkout</a></li>
-									
-								</ul></li>
 							
 							<li><a>Help</a></li>
 						</ul>
