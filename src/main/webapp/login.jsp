@@ -13,6 +13,8 @@
 	<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Login - Bloom</title>
+    <link rel="icon" href="${pageContext.request.contextPath}/res/images/feee.jpg" type="image/x-icon" />
+
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/res/js/login.js">
 	;
