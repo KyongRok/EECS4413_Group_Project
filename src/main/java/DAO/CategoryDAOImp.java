@@ -193,10 +193,10 @@ public class CategoryDAOImp implements CategoryDAO {
 		Collections.sort(items, new Comparator<Item>()
 		{
 			public int compare(Item first, Item second) {
-				if(first.getItemName().compareTo(second.getItemName()) >= 0) {
-					return -1;
-				}else {
+				if((first.getItemName().toLowerCase()).compareTo(second.getItemName().toLowerCase()) >= 0) {
 					return 1;
+				}else {
+					return -1;
 				}
 			}
 		});
@@ -207,11 +207,12 @@ public class CategoryDAOImp implements CategoryDAO {
 	public List<Item> sortAlpZToA(List<Item> items) {
 		Collections.sort(items, new Comparator<Item>()
 		{
+			
 			public int compare(Item first, Item second) {
-				if(first.getItemName().compareTo(second.getItemName()) >= 0) {
-					return 1;
-				}else {
+				if((first.getItemName().toLowerCase()).compareTo(second.getItemName().toLowerCase()) >= 0) {
 					return -1;
+				}else {
+					return 1;
 				}
 			}
 		});
