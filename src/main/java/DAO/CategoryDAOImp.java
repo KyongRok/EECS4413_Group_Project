@@ -217,6 +217,32 @@ public class CategoryDAOImp implements CategoryDAO {
 		});
 		return items;
 	}
-	
+	@Override
+	public List<Item> getItemsByBrand(String brand) {
+	    init();
+	    List<Item> items = new ArrayList<>();
+	    String sql = "SELECT * FROM item INNER JOIN category ON item.category_id = category.category_id WHERE brand = ?";
+	    try {
+	        PreparedStatement stmt = con.prepareStatement(sql);
+	        stmt.setString(1, brand);
+	        ResultSet rs = stmt.executeQuery();
+	        while (rs.next()) {
+	            Item item = new Item();
+	            item.setItemId(rs.getInt("item_id"));
+	            item.setItemName(rs.getString("item_name"));
+	            item.setDescription(rs.getString("description"));
+	            item.setCategoryId(rs.getInt("category_id"));
+	            item.setBrand(rs.getString("brand"));
+	            item.setQuantity(rs.getInt("quantity"));
+	            item.setPicture(rs.getString("picture"));
+	            item.setPrice(rs.getInt("price"));
+	            items.add(item);
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    connection.closeConnection(con);
+	    return items;
+	}
 	
 }
