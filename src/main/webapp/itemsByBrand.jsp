@@ -48,7 +48,7 @@
 
 					<div class="classynav">
 						<ul>
-							<li><a href="#">Shop</a>
+							<li><a href="shop">Shop</a>
 								<div class="megamenu">
 									<ul class="single-mega cn-col-4">
 										<li class="title">Women's</li>
@@ -95,7 +95,7 @@
 							<li><a href="#">Pages</a>
 								<ul class="dropdown">
 									<li><a href="Home.jsp">Home</a></li>
-									<li><a href="shop.jsp">Shop</a></li>
+									<li><a href="shop">Shop</a></li>
 									<li><a href="single-product-details.html">Product
 											Details</a></li>
 									<li><a href="checkOut.jsp">Checkout</a></li>
@@ -284,7 +284,7 @@
 						<!-- Footer Menu -->
 						<div class="footer_menu">
 							<ul>
-								<li><a href="shop.html">Shop</a></li>
+								<li><a href="shop">Shop</a></li>
 								<li><a>Contact</a></li>
 							</ul>
 						</div>
