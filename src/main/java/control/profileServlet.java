@@ -14,13 +14,13 @@ import model.User_info;
  * Servlet implementation class profileServlet
  */
 @WebServlet("/ProfileServlet")
-public class ProfileServlet extends HttpServlet {
+public class profileServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ProfileServlet() {
+    public profileServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
