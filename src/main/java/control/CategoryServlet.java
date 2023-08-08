@@ -16,7 +16,6 @@ public class CategoryServlet extends HttpServlet {
         String category = request.getParameter("category");
         String gender = request.getParameter("gender"); // Add gender parameter
         CategoryDAO categoryDAO = new CategoryDAOImp();
-        System.out.println(gender);
         String sort = request.getParameter("sort"); // Get sorting parameter
         if(gender != null) {
         	gender.toLowerCase();

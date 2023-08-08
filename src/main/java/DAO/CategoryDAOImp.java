@@ -246,4 +246,32 @@ public class CategoryDAOImp implements CategoryDAO {
 	    return items;
 	}
 	
+	public Item getItemById(int id) {
+		init();
+		
+		Item item = new Item();
+		String sql = "SELECT * FROM item WHERE item_id = ?";
+	    try {
+	        PreparedStatement stmt = con.prepareStatement(sql);
+	        stmt.setInt(1, id);
+	        ResultSet rs = stmt.executeQuery();
+	        while (rs.next()) {
+	            
+	            item.setItemId(rs.getInt("item_id"));
+	            item.setItemName(rs.getString("item_name"));
+	            item.setDescription(rs.getString("description"));
+	            item.setCategoryId(rs.getInt("category_id"));
+	            item.setBrand(rs.getString("brand"));
+	            item.setQuantity(rs.getInt("quantity"));
+	            item.setPicture(rs.getString("picture"));
+	            item.setPrice(rs.getInt("price"));
+	            
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    connection.closeConnection(con);
+	    return item;
+	}
+	
 }

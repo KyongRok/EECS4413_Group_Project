@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import DAO.UserDAOImp;
+import model.Cart;
 import model.User_info;
 
 @WebServlet("/LoginServlet")
@@ -27,7 +28,9 @@ public class LoginServlet extends HttpServlet {
 
         if (login_flag == 1) {
             User_info user = userDAO.get_userInfo(email, password);
+            Cart cart = new Cart();
             HttpSession session = request.getSession(true);
+            session.setAttribute("cart", cart);
             session.setAttribute("user", user);
             request.getRequestDispatcher("Home.jsp").forward(request, response);
         } else {
