@@ -4,7 +4,7 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:f="http://java.sun.com/jsp/jstl/fmt" version="2.0">
 	<jsp:directive.page contentType="text/html; charset=ISO-8859-1"
-		pageEncoding="ISO-8859-1" session="false" />
+		pageEncoding="ISO-8859-1" session="true" />
 	<jsp:output doctype-root-element="html"
 		doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
 		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
@@ -278,9 +278,11 @@
 
                         <ul class="order-details-form mb-4">
                             <li><span>Product</span> <span>Total</span></li>
-                            <li><span>Flower Bag</span> <span>$35.00</span></li>
-                            <li><span>total</span> <span>$35.00</span></li>
-                            <li><span>Total</span> <span>$35.00</span></li>
+                            <c:forEach items="${sessionScope.cart.cartItems}" var="cartItems">
+                            <li><span>${cartItems.itemName}</span> <span>${cartItems.price}</span></li>
+                            
+                            </c:forEach>
+                            <li><span>Total</span> <span>${sessionScope.cart.total}</span></li>
                         </ul>
 
                         <div id="accordion" role="tablist" class="mb-4">

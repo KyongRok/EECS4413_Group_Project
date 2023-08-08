@@ -51,8 +51,12 @@ public class Cart {
 		}
 	}
 	
-	public int get_total() {
+	public int getTotal() {
 		return this.total_price;
+	}
+	
+	public List<Item> getCartItems(){
+		return this.items;
 	}
 
 }

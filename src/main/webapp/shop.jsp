@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	import="java.util.List, model.Item"%>
-<%@ page session="false"%>
+<%@ page session="true"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 
 <html>
@@ -243,15 +243,19 @@
         <% List<Item> items = (List<Item>) request.getAttribute("items"); %>
         <% for (Item item : items) { %>
             <li class="item">
+            <form method = 'post' action="CartServlet">
                 <a href="#">
                     <img src="<%= item.getPicture() %>" alt="<%= item.getItemName() %>" width="200" height="200" />
                 </a>
                 <div class="item-details">
                     <h3><%= item.getItemName() %></h3>
                     <p class="item-price"><%= item.getPrice() %> CAD</p>
-                    <button type="submit">Add to Cart</button>
+                    <input type='hidden' name = 'item_id' value ="<%= item.getItemId() %>">
+                    <input type="submit" value='Add To Cart'>
                 </div>
+                </form>
             </li>
+            
         <% } %>
     </ul>
 	<footer class="footer_area clearfix">

@@ -50,10 +50,13 @@ public class CartServlet extends HttpServlet {
 				}else {
 					
 					Cart cart = (Cart) session.getAttribute("cart");
-					int target = Integer.valueOf(request.getParameter("Add To Cart"));
+					int target = Integer.valueOf(request.getParameter("item_id"));
 					CategoryDAO d = new CategoryDAOImp();
 					cart.addToCart(d.getItemById(target),1);
-					request.getRequestDispatcher("/shop.jsp").forward(request, response);
+					for(int i = 0; i < cart.getCartItems().size(); i++) {
+						System.out.println(cart.getCartItems().get(i).getItemName());
+					}
+					request.getRequestDispatcher("/checkOut.jsp").forward(request, response);
 				}
 		 }
 	}
