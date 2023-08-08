@@ -46,7 +46,7 @@
 
 					<div class="classynav">
 						<ul>
-							<li><a href="shop">Shop</a>
+							<li><a href="#">Shop</a>
 								<div class="megamenu">
 									<ul class="single-mega cn-col-4">
 										<li class="title">Women's</li>
@@ -288,7 +288,7 @@
 						<!-- Footer Menu -->
 						<div class="footer_menu">
 							<ul>
-								<li><a href="shop">Shop</a></li>
+								<li><a href="shop.html">Shop</a></li>
 								<li><a>Contact</a></li>
 							</ul>
 						</div>
