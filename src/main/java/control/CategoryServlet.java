@@ -16,13 +16,16 @@ public class CategoryServlet extends HttpServlet {
         String category = request.getParameter("category");
         String gender = request.getParameter("gender"); // Add gender parameter
         CategoryDAO categoryDAO = new CategoryDAOImp();
+        System.out.println(gender);
         String sort = request.getParameter("sort"); // Get sorting parameter
-
+        if(gender != null) {
+        	gender.toLowerCase();
+        }
         List<Item> items;
 
-        if (category != null && !category.isEmpty()) {
+        if (category != null && !category.isEmpty() && (gender == null)) {
             items = categoryDAO.searchByCategorieskeyword(category);
-        } else if (gender != null && (gender.equalsIgnoreCase("women") || gender.equalsIgnoreCase("men"))) {
+        } else if (gender != null && (gender.equals("women") || gender.equals("men"))) {
  
             items = categoryDAO.searchByCategoryNameAndGender(category, gender);
         } else {
