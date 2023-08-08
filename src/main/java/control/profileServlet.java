@@ -13,14 +13,14 @@ import model.User_info;
 /**
  * Servlet implementation class profileServlet
  */
-@WebServlet("/profileServlet")
-public class profileServlet extends HttpServlet {
+@WebServlet("/ProfileServlet")
+public class ProfileServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public profileServlet() {
+    public ProfileServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -44,5 +44,9 @@ public class profileServlet extends HttpServlet {
 		 }
 		
 	}
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Forward to the profile.jsp page for GET requests
+    	doPost(request, response);
+    }
 
 }
