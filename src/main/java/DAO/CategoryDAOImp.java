@@ -44,7 +44,7 @@ public class CategoryDAOImp implements CategoryDAO {
                 item.setDescription(rs.getString("description"));
                 item.setCategoryId(rs.getInt("category_id"));
                 item.setBrand(rs.getString("brand"));
-                item.setQuantity(rs.getInt("quantity"));
+          
                 item.setPicture(rs.getString("picture"));
                 item.setPrice(rs.getInt("price"));
                 items.add(item);
@@ -82,7 +82,7 @@ public class CategoryDAOImp implements CategoryDAO {
                 item.setDescription(rs.getString("description"));
                 item.setCategoryId(rs.getInt("category_id"));
                 item.setBrand(rs.getString("brand"));
-                item.setQuantity(rs.getInt("quantity"));
+               
                 item.setPicture(rs.getString("picture"));
                 item.setPrice(rs.getInt("price"));
                 items.add(item);
@@ -113,7 +113,7 @@ public class CategoryDAOImp implements CategoryDAO {
                 item.setDescription(rs.getString("description"));
                 item.setCategoryId(rs.getInt("category_id"));
                 item.setBrand(rs.getString("brand"));
-                item.setQuantity(rs.getInt("quantity"));
+                
                 item.setPicture(rs.getString("picture"));
                 item.setPrice(rs.getInt("price"));
                 items.add(item);
@@ -143,7 +143,7 @@ public class CategoryDAOImp implements CategoryDAO {
                 item.setDescription(rs.getString("description"));
                 item.setCategoryId(rs.getInt("category_id"));
                 item.setBrand(rs.getString("brand"));
-                item.setQuantity(rs.getInt("quantity"));
+               
                 item.setPicture(rs.getString("picture"));
                 item.setPrice(rs.getInt("price"));
                 items.add(item);
@@ -234,7 +234,7 @@ public class CategoryDAOImp implements CategoryDAO {
 	            item.setDescription(rs.getString("description"));
 	            item.setCategoryId(rs.getInt("category_id"));
 	            item.setBrand(rs.getString("brand"));
-	            item.setQuantity(rs.getInt("quantity"));
+	          
 	            item.setPicture(rs.getString("picture"));
 	            item.setPrice(rs.getInt("price"));
 	            items.add(item);
@@ -262,7 +262,7 @@ public class CategoryDAOImp implements CategoryDAO {
 	            item.setDescription(rs.getString("description"));
 	            item.setCategoryId(rs.getInt("category_id"));
 	            item.setBrand(rs.getString("brand"));
-	            item.setQuantity(rs.getInt("quantity"));
+	           
 	            item.setPicture(rs.getString("picture"));
 	            item.setPrice(rs.getInt("price"));
 	            

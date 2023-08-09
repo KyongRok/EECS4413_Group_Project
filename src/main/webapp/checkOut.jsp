@@ -279,7 +279,7 @@
                         <ul class="order-details-form mb-4">
                             <li><span>Product</span> <span>Total</span></li>
                             <c:forEach items="${sessionScope.cart.cartItems}" var="cartItems">
-                            <li><span>${cartItems.itemName}</span> <span>${cartItems.price}</span></li>
+                            <li><span>${cartItems.itemName} , ${cartItems.quantity}</span> <span>${cartItems.price}</span></li>
                             
                             </c:forEach>
                             <li><span>Total</span> <span>${sessionScope.cart.total}</span></li>
