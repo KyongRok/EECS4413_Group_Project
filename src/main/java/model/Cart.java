@@ -12,8 +12,8 @@ public class Cart {
 		items = new ArrayList<>();
 	}
 	
-	public void addToCart(Item item,int qty) {
-	
+	public void addToCart(Item item) {
+	//fix this
 		Item added = new Item();
 		added.setItemId(item.getItemId());
 		added.setItemName(item.getItemName());
@@ -22,10 +22,26 @@ public class Cart {
 		added.setDescription(item.getDescription());
 		added.setPicture(item.getPicture());
 		added.setPrice(item.getPrice());
-		added.setQuantity(qty);
+		added.setQuantity(1);
+		//added.setQuantity(qty);
+		int already_in_cart_flag = 0;
+		int index_of_item=0;
+		for(int i =0; i<items.size(); i++) {
+			if(items.get(i).getItemId() == added.getItemId()) {
+				already_in_cart_flag++;
+				index_of_item = i;
+			}
+		}
+		if(already_in_cart_flag == 1) {
+			int updated_qty = items.get(index_of_item).getQuantity() + 1;
+			items.get(index_of_item).setQuantity(updated_qty);
+			this.total_price -= item.getPrice() * (updated_qty -1);
+			this.total_price += item.getPrice() * updated_qty;
+		}else {
+			this.items.add(added);
+			this.total_price += item.getPrice();
+		}
 		
-		this.items.add(item);
-		this.total_price += item.getPrice();
 	}
 	
 	public void removeFromCart(Item item) {
