@@ -238,26 +238,23 @@
 	<br>
 	<br>
 	<ul class="item-grid">
-		<%
-		List<Item> items = (List<Item>) request.getAttribute("items");
-		%>
-		<%
-		for (Item item : items) {
-		%>
-		<li class="item"><a href="#"> <img
-				src="<%=item.getPicture()%>" alt="<%=item.getItemName()%>"
-				width="200" height="200" />
-		</a>
-			<div class="item-details">
-				<h3><%=item.getItemName()%></h3>
-				<p class="item-price"><%=item.getPrice()%>
-					CAD
-				</p>
-				<button type="submit">Add to Cart</button>
-			</div></li>
-		<%
-		}
-		%>
+	<% List<Item> items = (List<Item>) request.getAttribute("items"); %>
+        <% for (Item item : items) { %>
+            <li class="item">
+            <form method = 'post' action="CartServlet">
+                <a href="#">
+                    <img src="<%= item.getPicture() %>" alt="<%= item.getItemName() %>" width="200" height="200" />
+                </a>
+                <div class="item-details">
+                    <h3><%= item.getItemName() %></h3>
+                    <p class="item-price"><%= item.getPrice() %> CAD</p>
+                    <input type='hidden' name = 'item_id' value ="<%= item.getItemId() %>">
+                    <input type="submit" value='Add To Cart'>
+                </div>
+                </form>
+            </li>
+            
+        <% } %>
 	</ul>
 	<div class="checkout_area section-padding-80">
 		<div class="container">
