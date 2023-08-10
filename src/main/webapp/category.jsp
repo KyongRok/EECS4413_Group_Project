@@ -12,7 +12,9 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
 <title>Bloom - Category</title>
-    <link rel="icon" href="${pageContext.request.contextPath}/res/images/feee.jpg" type="image/x-icon" />
+<link rel="icon"
+	href="${pageContext.request.contextPath}/res/images/feee.jpg"
+	type="image/x-icon" />
 
 <!-- css-->
 <link rel="stylesheet"
@@ -75,10 +77,14 @@
 									</ul>
 									<ul class="single-mega cn-col-4">
 										<li class="title">Brands</li>
-										<li><a href="${pageContext.request.contextPath}/itemsByBrand?brand=Boss">Boss</a></li>
-										<li><a href="${pageContext.request.contextPath}/itemsByBrand?brand=Nike">Nike</a></li>
-										<li><a href="${pageContext.request.contextPath}/itemsByBrand?brand=Zara">Zara</a></li>
-										<li><a href="${pageContext.request.contextPath}/itemsByBrand?brand=Adidas">Adidas</a></li>
+										<li><a
+											href="${pageContext.request.contextPath}/itemsByBrand?brand=Boss">Boss</a></li>
+										<li><a
+											href="${pageContext.request.contextPath}/itemsByBrand?brand=Nike">Nike</a></li>
+										<li><a
+											href="${pageContext.request.contextPath}/itemsByBrand?brand=Zara">Zara</a></li>
+										<li><a
+											href="${pageContext.request.contextPath}/itemsByBrand?brand=Adidas">Adidas</a></li>
 									</ul>
 									<div class="single-mega cn-col-4">
 										<img
@@ -143,7 +149,7 @@
 				<!-- Cart Area -->
 				<div class="cart-area">
 					<a href="#" id="essenceCartBtn"><img
-						src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span>2</span></a>
+						src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span></span></a>
 				</div>
 			</div>
 
@@ -157,7 +163,7 @@
 		<!-- Cart Button -->
 		<div class="cart-button">
 			<a href="#" id="rightSideCart"><img
-				src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span>2</span></a>
+				src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span></span></a>
 		</div>
 
 		<div class="cart-content d-flex">
@@ -238,23 +244,32 @@
 	<br>
 	<br>
 	<ul class="item-grid">
-	<% List<Item> items = (List<Item>) request.getAttribute("items"); %>
-        <% for (Item item : items) { %>
-            <li class="item">
-            <form method = 'post' action="CartServlet">
-                <a href="#">
-                    <img src="<%= item.getPicture() %>" alt="<%= item.getItemName() %>" width="200" height="200" />
-                </a>
-                <div class="item-details">
-                    <h3><%= item.getItemName() %></h3>
-                    <p class="item-price"><%= item.getPrice() %> CAD</p>
-                    <input type='hidden' name = 'item_id' value ="<%= item.getItemId() %>">
-                    <input type="submit" value='Add To Cart'>
-                </div>
-                </form>
-            </li>
-            
-        <% } %>
+		<%
+		List<Item> items = (List<Item>) request.getAttribute("items");
+		%>
+		<%
+		for (Item item : items) {
+		%>
+		<li class="item">
+			<form method='post' action="CartServlet">
+				<a
+					href="${pageContext.request.contextPath}/ItemDetails?itemId=<%=item.getItemId()%>">
+					<img src="<%=item.getPicture()%>" alt="<%=item.getItemName()%>"
+					width="200" height="200" />
+				</a>
+				<div class="item-details">
+					<h3><%=item.getItemName()%></h3>
+					<p class="item-price"><%=item.getPrice()%>
+						CAD
+					</p>
+					<input type='hidden' name='item_id' value="<%=item.getItemId()%>">
+					<input type="submit" value='Add To Cart'>
+				</div>
+			</form>
+		</li>
+		<%
+		}
+		%>
 	</ul>
 	<div class="checkout_area section-padding-80">
 		<div class="container">
@@ -285,7 +300,7 @@
 						<!-- Footer Menu -->
 						<div class="footer_menu">
 							<ul>
-								<li><a href="shop.html">Shop</a></li>
+								<li><a href="shop">Shop</a></li>
 								<li><a>Contact</a></li>
 							</ul>
 						</div>
@@ -348,7 +363,6 @@
 			<div class="row mt-5">
 				<div class="col-md-12 text-center">
 					<p>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						Copyright &#169;
 						<script>
 							document.write(new Date().getFullYear());
