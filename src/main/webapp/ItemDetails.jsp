@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	import="java.util.List, model.Item"%>
-<%@ page session="true"%>
+<%@ page session="false"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 
 <html>
@@ -11,18 +11,19 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-<title>Bloom - Fashion Store</title>
-
-    <link rel="icon" href="${pageContext.request.contextPath}/res/images/feee.jpg" type="image/x-icon" />
-
+<title>Bloom - Category</title>
+<link rel="icon"
+	href="${pageContext.request.contextPath}/res/images/feee.jpg"
+	type="image/x-icon" />
 
 <!-- css-->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/res/css/core-style.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/res/css/details.css" />
 
 </head>
 <body>
-	<!-- Start -->
 	<header class="header_area">
 		<div
 			class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
@@ -157,8 +158,6 @@
 		</div>
 	</header>
 
-
-
 	<div class="cart-bg-overlay"></div>
 
 	<div class="right-side-cart-area">
@@ -227,41 +226,21 @@
 			</div>
 		</div>
 	</div>
-
-	<h1>Shop</h1>
-	<form id="sortForm" action="${pageContext.request.contextPath}/shop"
-		method="get">
-		<select name="sort" id="sort"
-			onchange="document.getElementById('sortForm').submit()">
-			<option value="sort">sort</option>
-			<option value="nameAToZ">Name A to Z</option>
-			<option value="nameZToA">Name Z to A</option>
-			<option value="priceLowToHigh">Price Low to High</option>
-			<option value="priceHighToLow">Price High to Low</option>
-		</select>
-	</form>
-	<br>
-	<br>
-	<br>
-    <ul class="item-grid">
-        <% List<Item> items = (List<Item>) request.getAttribute("items"); %>
-        <% for (Item item : items) { %>
-            <li class="item">
-            <form method = 'post' action="CartServlet">
-                <a href="${pageContext.request.contextPath}/ItemDetails?itemId=<%=item.getItemId()%>">
-                    <img src="<%= item.getPicture() %>" alt="<%= item.getItemName() %>" width="200" height="200" />
-                </a>
-                <div class="item-details">
-                    <h3><%= item.getItemName() %></h3>
-                    <p class="item-price"><%= item.getPrice() %> CAD</p>
-                    <input type='hidden' name = 'item_id' value ="<%= item.getItemId() %>">
-                    <input type="submit" value='Add To Cart'>
-                </div>
-                </form>
-            </li>
-            
-        <% } %>
-    </ul>
+	<!-- Display item details here -->
+	<br><br>
+	<div class="product-details">
+		<div class="product-image">
+			<img src="${item.picture}" alt="${item.itemName}" />
+		</div>
+		<div class="product-description">
+			<h2 class="product-name">${item.itemName}</h2>
+			<p class="product-brand">${item.brand}</p>
+			<p class="product-price">$${item.price}</p>
+			<p>${item.description}</p>
+			<button class="add-to-cart-btn">Add to Cart</button>
+		</div>
+	</div>
+<br> <br>
 	<footer class="footer_area clearfix">
 		<div class="container">
 			<div class="row">
@@ -277,7 +256,7 @@
 						<!-- Footer Menu -->
 						<div class="footer_menu">
 							<ul>
-								<li><a href="shop">Shop</a></li>
+								<li><a href="shop.html">Shop</a></li>
 								<li><a>Contact</a></li>
 							</ul>
 						</div>
@@ -340,11 +319,13 @@
 			<div class="row mt-5">
 				<div class="col-md-12 text-center">
 					<p>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						Copyright &#169;
 						<script>
 							document.write(new Date().getFullYear());
 						</script>
 						EECS4413 from <a href="https://colorlib.com" target="_blank">Colorlib</a>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</p>
 				</div>
 			</div>
