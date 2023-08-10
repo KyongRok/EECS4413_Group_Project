@@ -78,10 +78,14 @@
 									</ul>
 									<ul class="single-mega cn-col-4">
 										<li class="title">Brands</li>
-										<li><a href="#">Zara</a></li>
-										<li><a href="#">Boss</a></li>
-										<li><a href="#">Nike</a></li>
-										<li><a href="#">Adidas</a></li>
+										<li><a
+											href="${pageContext.request.contextPath}/itemsByBrand?brand=Boss">Boss</a></li>
+										<li><a
+											href="${pageContext.request.contextPath}/itemsByBrand?brand=Nike">Nike</a></li>
+										<li><a
+											href="${pageContext.request.contextPath}/itemsByBrand?brand=Zara">Zara</a></li>
+										<li><a
+											href="${pageContext.request.contextPath}/itemsByBrand?brand=Adidas">Adidas</a></li>
 									</ul>
 									<div class="single-mega cn-col-4">
 										<img
@@ -146,7 +150,7 @@
 				<!-- Cart Area -->
 				<div class="cart-area">
 					<a href="#" id="essenceCartBtn"><img
-						src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span>2</span></a>
+						src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span></span></a>
 				</div>
 			</div>
 
@@ -162,7 +166,7 @@
 		<!-- Cart Button -->
 		<div class="cart-button">
 			<a href="#" id="rightSideCart"><img
-				src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span>2</span></a>
+				src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span></span></a>
 		</div>
 
 		<div class="cart-content d-flex">
@@ -244,7 +248,7 @@
         <% for (Item item : items) { %>
             <li class="item">
             <form method = 'post' action="CartServlet">
-                <a href="#">
+                <a href="${pageContext.request.contextPath}/ItemDetails?itemId=<%=item.getItemId()%>">
                     <img src="<%= item.getPicture() %>" alt="<%= item.getItemName() %>" width="200" height="200" />
                 </a>
                 <div class="item-details">
