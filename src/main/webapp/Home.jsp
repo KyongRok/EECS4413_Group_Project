@@ -167,22 +167,24 @@
 		<!-- Cart Button -->
 		<div class="cart-button">
 			<a href="#" id="rightSideCart"><img
-				src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span>2</span></a>
+				src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" />
+				<span>${sessionScope.cart.qty}</span></a>
 		</div>
 
 		<div class="cart-content d-flex">
 
 			<!-- Cart List Area -->
+			
 			<div class="cart-list">
-				<!-- Single Cart Item -->
-				<div class="single-cart-item">
+								<div class="single-cart-item">
 					<a href="#" class="product-image"> <img
 						src="${pageContext.request.contextPath}/res/images/jeans.jpg"
 						class="cart-thumb" alt="" />
 
 						<div class="cart-item-desc">
 							<span class="product-remove"><i class="fa fa-close"
-								aria-hidden="true">.</i></span><span class="badge">Zara</span>
+								aria-hidden="true"> <!--  Some content -->.
+							</i></span><span class="badge">Zara</span>
 							<h6>Black Jeans</h6>
 							<p class="price">$55.00</p>
 							<p class="size">Size: L</p>
@@ -191,35 +193,16 @@
 						</div>
 					</a>
 				</div>
-
-				<!-- Single Cart Item -->
-				<div class="single-cart-item">
-					<a href="#" class="product-image"> <img
-						src="${pageContext.request.contextPath}/res/images/flr.jpg"
-						class="cart-thumb" alt="" />
-
-						<div class="cart-item-desc">
-							<span class="product-remove"><i class="fa fa-close"
-								aria-hidden="true"> <!--  Some content -->.
-							</i></span> <span class="badge">Zara</span>
-							<h6>Flower Bag</h6>
-							<p class="price">$35.00</p>
-							<p class="size">Size: M</p>
-							<p class="color">Color: Yellow</p>
-
-						</div>
-					</a>
-				</div>
 			</div>
+				
+				
 
 			<!-- Cart Summary -->
 			<div class="cart-amount-summary">
 
 				<h2>Summary</h2>
 				<ul class="summary-table">
-					<li><span>sub-total:</span> <span>$100.00</span></li>
-					<li><span>discount:</span> <span>-10%</span></li>
-					<li><span>total:</span> <span>$93.99</span></li>
+					<li><span>sub-total:</span> <span>$ ${sessionScope.cart.total}</span></li>
 				</ul>
 				<div class="checkout-btn mt-100">
 					<a href="checkOut.jsp" class="btn essence-btn">check out</a>

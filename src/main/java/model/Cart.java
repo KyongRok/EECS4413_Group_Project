@@ -74,6 +74,14 @@ public class Cart {
 	public List<Item> getCartItems(){
 		return this.items;
 	}
+	
+	public int getQty() {
+		int total_qty = 0;
+		for(int i = 0; i < items.size(); i++) {
+			total_qty += items.get(i).getQuantity();
+		}
+		return total_qty;
+	}
 
 }
 
