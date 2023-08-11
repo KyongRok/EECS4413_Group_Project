@@ -13,6 +13,7 @@ import java.util.List;
 
 import model.Category;
 import model.Item;
+import model.sale;
 
 public class CategoryDAOImp implements CategoryDAO {
     Connection con;
@@ -272,6 +273,45 @@ public class CategoryDAOImp implements CategoryDAO {
 	    }
 	    connection.closeConnection(con);
 	    return item;
+	}
+	
+	public List<sale> getsales(){
+		 init();
+		    List<sale> items = new ArrayList<>();
+		    String sql = "SELECT * FROM sales";
+		    try {
+		        PreparedStatement stmt = con.prepareStatement(sql);
+		        ResultSet rs = stmt.executeQuery();
+		        while (rs.next()) {
+		            sale s = new sale();
+		           s.setId(rs.getInt("item_id"));
+		           s.setQty(rs.getInt("sale_qty"));
+		           s.setName(rs.getString("item_name"));
+		            items.add(s);
+		        }
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		    }
+		    connection.closeConnection(con);
+		    return items;
+	}
+	
+	public void insertIntoSales(List<Item> item) {
+		init();
+		  
+		for(int i =0; i< item.size(); i++) {
+			int qty = item.get(i).getQuantity();
+			int id = item.get(i).getItemId();
+			 String sql = "UPDATE SALES "
+			 		+ "SET sale_qty = sale_qty + " + qty + " where sale_qty.item_id = " + id;
+		try {
+			 PreparedStatement stmt = con.prepareStatement(sql);
+			  stmt.execute();	  
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    connection.closeConnection(con);	
+		}
 	}
 	
 }

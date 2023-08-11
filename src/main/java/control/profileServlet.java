@@ -1,6 +1,8 @@
 package control;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,7 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import DAO.CategoryDAOImp;
+import model.Item;
 import model.User_info;
+import model.sale;
 
 /**
  * Servlet implementation class profileServlet
@@ -33,10 +38,16 @@ public class profileServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		 synchronized (session) {
 			 User_info u = (User_info) session.getAttribute("user");
-			 
-			 if(u == null) {
+			 String admin = (String) session.getAttribute("admin");
+			 if(u == null && admin == null) {
 				 	
 					request.getRequestDispatcher("login.jsp").forward(request, response);
+				}else if(u == null && admin.equals("yes")){
+					//change this.
+					CategoryDAOImp categoryDAO = new CategoryDAOImp();
+					List<sale> sales = categoryDAO.getsales();
+					session.setAttribute("sales", sales);
+					request.getRequestDispatcher("sales.jsp").forward(request, response);
 				}else {
 					
 					request.getRequestDispatcher("profile.jsp").forward(request, response);

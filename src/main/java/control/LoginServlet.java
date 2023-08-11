@@ -24,16 +24,26 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         UserDAOImp userDAO = new UserDAOImp();
+        int admin_flag = 0;
+        if(email.equals("admin@gmail.com") && password.equals("1234")) {
+        	admin_flag++;
+        }
         int login_flag = userDAO.user_login(email, password);
-
-        if (login_flag == 1) {
+        
+        if (login_flag == 1 && admin_flag == 0) {
             User_info user = userDAO.get_userInfo(email, password);
             Cart cart = new Cart();
             HttpSession session = request.getSession(true);
             session.setAttribute("cart", cart);
             session.setAttribute("user", user);
             request.getRequestDispatcher("Home.jsp").forward(request, response);
-        } else {
+        } else if(login_flag == 1 && admin_flag == 1){
+        	HttpSession session = request.getSession(true);
+        	Cart cart = new Cart();
+        	session.setAttribute("cart", cart);
+        	session.setAttribute("admin","yes");
+        	request.getRequestDispatcher("Home.jsp").forward(request, response);
+        }else {
             // User does not exist or invalid credentials
             request.setAttribute("loginError", "Invalid email or password");
             request.getRequestDispatcher("login.jsp").forward(request, response);
