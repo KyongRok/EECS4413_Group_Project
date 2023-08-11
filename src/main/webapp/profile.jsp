@@ -16,20 +16,17 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/core-style.css"/>
 </head>
 <body>
-   	<!-- Start -->
+
 	<header class="header_area">
 		<div
 			class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
-			<!-- Classy Menu -->
 			<nav class="classy-navbar" id="essenceNav">
-				<!-- Logo -->
 				<a class="nav-brand" href="Home.jsp"><img
 					src="${pageContext.request.contextPath}/res/images/logo.png" alt=""/></a>
 			
 				<div class="classy-navbar-toggler">
 					<span class="navbarToggler"><span></span><span></span><span></span></span>
 				</div>
-				<!-- Menu -->
 				<div class="classy-menu">
 				
 					<div class="classycloseIcon">
@@ -52,7 +49,6 @@
 										<li><a
 											href="${pageContext.request.contextPath}/category?gender=women&amp;category=street">Street
 												Style</a></li>
-										<!-- Other items for Women's collection -->
 									</ul>
 									<!-- Men's Collection -->
 									<ul class="single-mega cn-col-4">
@@ -65,7 +61,6 @@
 										<li><a
 											href="${pageContext.request.contextPath}/category?gender=men&amp;category=street">Street
 												Style</a></li>
-										<!-- Other items for Men's collection -->
 									</ul>
 									<ul class="single-mega cn-col-4">
 										<li class="title">Brands</li>
@@ -94,7 +89,7 @@
 						<input type="search" name="search" id="headerSearch"
 							placeholder="Type for search"/>
 						<button type="submit">
-							<i class="fa fa-search" aria-hidden="true"><!--  Some content -->.</i>
+							<i class="fa fa-search" aria-hidden="true">.</i>
 						</button>
 					</form>
 				</div>
@@ -102,16 +97,13 @@
 				<div class="favourite-area">
 					<a href="#"><img src="${pageContext.request.contextPath}/res/images/heart.svg" alt=""/></a>
 				</div>
-				<!-- User Login Info -->
-				<!--                <div class="classynav">-->
+
 				<div class="user-login-info ">               
-					<a href="login"><img src="${pageContext.request.contextPath}/res/images/user.svg" alt=""/><!-- content --></a>
+					<a href="login"><img src="${pageContext.request.contextPath}/res/images/user.svg" alt=""/></a>
 				</div>
-				<!--                </div>-->
-				<!-- Cart Area -->
 				<div class="cart-area">
-					<a href="#" id="essenceCartBtn"><img src="${pageContext.request.contextPath}/res/images/bag.svg"
-						alt=""/><span>2</span><!-- content --></a>
+					<a href="ShowCart.jsp" id="essenceCartBtn"><img src="${pageContext.request.contextPath}/res/images/bag.svg"
+						alt=""/><span></span></a>
 				</div>
 			</div>
 
@@ -186,19 +178,19 @@
 								<input type="email" name="mail" class="mail"
 									placeholder="Your email here"/>
 								<button type="submit" class="submit">
-									<i class="fa fa-long-arrow-right" aria-hidden="true"><!--  Some content -->.</i>
+									<i class="fa fa-long-arrow-right" aria-hidden="true"><.</i>
 								</button>
 							</form>
 						</div>
 					</div>
 				</div>
-				<!-- Single Widget Area -->
+				
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area">
 						<div class="footer_social_area">
 							<a href="#" data-toggle="tooltip" data-placement="top"
 								title="Facebook"><i class="fa fa-facebook"
-								aria-hidden="true"><!--  Some content -->.</i></a> <a href="#" data-toggle="tooltip"
+								aria-hidden="true">.</i></a> <a href="#" data-toggle="tooltip"
 								data-placement="top" title="Instagram"><i
 								class="fa fa-instagram" aria-hidden="true">.</i></a> <a href="#"
 								data-toggle="tooltip" data-placement="top" title="Twitter"><i
@@ -215,7 +207,6 @@
 			<div class="row mt-5">
 				<div class="col-md-12 text-center">
 					<p>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						Copyright &#169;
 						<script>document.write(new Date().getFullYear());</script>
 						All rights reserved | EECS4413 from <a href="https://colorlib.com" target="_blank">Colorlib</a>
