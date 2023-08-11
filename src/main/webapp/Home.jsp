@@ -151,65 +151,13 @@
 				</div>
 				<!-- Cart Area -->
 				<div class="cart-area">
-					<a href="#" id="essenceCartBtn"><img
-						src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span>2</span></a>
+					<a href="ShowCart.jsp" id="essenceCartBtn"><img
+						src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span></span></a>
 				</div>
 			</div>
 
 		</div>
 	</header>
-
-
-	<div class="cart-bg-overlay"></div>
-
-	<div class="right-side-cart-area">
-
-		<!-- Cart Button -->
-		<div class="cart-button">
-			<a href="#" id="rightSideCart"><img
-				src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" />
-				<span>${sessionScope.cart.qty}</span></a>
-		</div>
-
-		<div class="cart-content d-flex">
-
-			<!-- Cart List Area -->
-			
-			<div class="cart-list">
-								<div class="single-cart-item">
-					<a href="#" class="product-image"> <img
-						src="${pageContext.request.contextPath}/res/images/jeans.jpg"
-						class="cart-thumb" alt="" />
-
-						<div class="cart-item-desc">
-							<span class="product-remove"><i class="fa fa-close"
-								aria-hidden="true"> <!--  Some content -->.
-							</i></span><span class="badge">Zara</span>
-							<h6>Black Jeans</h6>
-							<p class="price">$55.00</p>
-							<p class="size">Size: L</p>
-							<p class="color">Color: Black</p>
-
-						</div>
-					</a>
-				</div>
-			</div>
-				
-				
-
-			<!-- Cart Summary -->
-			<div class="cart-amount-summary">
-
-				<h2>Summary</h2>
-				<ul class="summary-table">
-					<li><span>sub-total:</span> <span>$ ${sessionScope.cart.total}</span></li>
-				</ul>
-				<div class="checkout-btn mt-100">
-					<a href="checkOut.jsp" class="btn essence-btn">check out</a>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<section class="welcome_area bg-img background-overlay"
 		style="background-image: url(${pageContext.request.contextPath}/res/images/welcome.jpg);">
