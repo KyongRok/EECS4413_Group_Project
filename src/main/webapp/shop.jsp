@@ -16,26 +16,22 @@
     <link rel="icon" href="${pageContext.request.contextPath}/res/images/feee.jpg" type="image/x-icon" />
 
 
-<!-- css-->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/res/css/core-style.css" />
 
 </head>
 <body>
-	<!-- Start -->
 	<header class="header_area">
 		<div
 			class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
-			<!-- Classy Menu -->
 			<nav class="classy-navbar" id="essenceNav">
-				<!-- Logo -->
 				<a class="nav-brand" href="Home.jsp"><img
 					src="${pageContext.request.contextPath}/res/images/logo.png" alt="" /></a>
 
 				<div class="classy-navbar-toggler">
-					<span class="navbarToggler"><span> <!-- content -->
-					</span><span> <!-- content -->
-					</span><span> <!-- content -->
+					<span class="navbarToggler"><span> 
+					</span><span> 
+					</span><span> 
 					</span></span>
 				</div>
 				<!-- Menu -->
@@ -128,14 +124,11 @@
 						alt="" /></a>
 				</div>
 				<div class="user-login-info">
-					<!-- Hidden form for sending a POST request to ProfileServlet -->
 					<form id="profileForm"
 						action="${pageContext.request.contextPath}/ProfileServlet"
 						method="post">
-						<!-- You can add any necessary hidden inputs here -->
 					</form>
 
-					<!-- Profile icon that triggers the form submission -->
 					<a href="#"
 						onclick="document.getElementById('profileForm').submit();"> <img
 						src="${pageContext.request.contextPath}/res/images/user.svg"
@@ -147,9 +140,8 @@
 						src="${pageContext.request.contextPath}/res/images/logout.png"
 						alt="" /></a>
 				</div>
-				<!-- Cart Area -->
 				<div class="cart-area">
-					<a href="#" id="essenceCartBtn"><img
+					<a href="ShowCart.jsp" id="essenceCartBtn"><img
 						src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span></span></a>
 				</div>
 			</div>
@@ -158,75 +150,6 @@
 	</header>
 
 
-
-	<div class="cart-bg-overlay"></div>
-
-	<div class="right-side-cart-area">
-
-		<!-- Cart Button -->
-		<div class="cart-button">
-			<a href="#" id="rightSideCart"><img
-				src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span></span></a>
-		</div>
-
-		<div class="cart-content d-flex">
-
-			<!-- Cart List Area -->
-			<div class="cart-list">
-				<!-- Single Cart Item -->
-				<div class="single-cart-item">
-					<a href="#" class="product-image"> <img
-						src="${pageContext.request.contextPath}/res/images/jeans.jpg"
-						class="cart-thumb" alt="" />
-
-						<div class="cart-item-desc">
-							<span class="product-remove"><i class="fa fa-close"
-								aria-hidden="true"> <!--  Some content -->.
-							</i></span><span class="badge">Zara</span>
-							<h6>Black Jeans</h6>
-							<p class="price">$55.00</p>
-							<p class="size">Size: L</p>
-							<p class="color">Color: Black</p>
-
-						</div>
-					</a>
-				</div>
-
-				<!-- Single Cart Item -->
-				<div class="single-cart-item">
-					<a href="#" class="product-image"> <img
-						src="${pageContext.request.contextPath}/res/images/flr.jpg"
-						class="cart-thumb" alt="" />
-
-						<div class="cart-item-desc">
-							<span class="product-remove"><i class="fa fa-close"
-								aria-hidden="true"> <!--  Some content -->.
-							</i></span> <span class="badge">Zara</span>
-							<h6>Flower Bag</h6>
-							<p class="price">$35.00</p>
-							<p class="size">Size: M</p>
-							<p class="color">Color: Yellow</p>
-
-						</div>
-					</a>
-				</div>
-			</div>
-
-			<!-- Cart Summary -->
-			<div class="cart-amount-summary">
-
-				<h2>Summary</h2>
-				<ul class="summary-table">
-					<li><span>sub-total:</span> <span>$100.00</span></li>
-					<li><span>discount:</span> <span>-10%</span></li>
-					<li><span>total:</span> <span>$93.99</span></li>
-				</ul>
-				<div class="checkout-btn mt-100">
-					<a href="checkOut.jsp" class="btn essence-btn">check out</a>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<h1>Shop</h1>
 	<form id="sortForm" action="${pageContext.request.contextPath}/shop"
@@ -309,7 +232,7 @@
 								<input type="email" name="mail" class="mail"
 									placeholder="Your email here" />
 								<button type="submit" class="submit">
-									<i class="fa fa-long-arrow-right" aria-hidden="true"> <!--  Some content -->.
+									<i class="fa fa-long-arrow-right" aria-hidden="true">.
 									</i>
 								</button>
 							</form>
