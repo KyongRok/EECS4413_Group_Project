@@ -12,11 +12,12 @@
 	<html xmlns="http://www.w3.org/1999/xhtml">
 	
 <head>
+    <link rel="icon" href="${pageContext.request.contextPath}/res/images/feee.jpg" type="image/x-icon" />
+
     <title>Profile</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/core-style.css"/>
 </head>
 <body>
-
 	<header class="header_area">
 		<div
 			class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
@@ -62,13 +63,6 @@
 											href="${pageContext.request.contextPath}/category?gender=men&amp;category=street">Street
 												Style</a></li>
 									</ul>
-									<ul class="single-mega cn-col-4">
-										<li class="title">Brands</li>
-										<li><a href="${pageContext.request.contextPath}/itemsByBrand?brand=Boss">Boss</a></li>
-										<li><a href="${pageContext.request.contextPath}/itemsByBrand?brand=Nike">Nike</a></li>
-										<li><a href="${pageContext.request.contextPath}/itemsByBrand?brand=Zara">Zara</a></li>
-										<li><a href="${pageContext.request.contextPath}/itemsByBrand?brand=Adidas">Adidas</a></li>
-									</ul>
 									<div class="single-mega cn-col-4">
 										<img
 											src="${pageContext.request.contextPath}/res/images/bag.jpg"
@@ -83,7 +77,6 @@
 			</nav>
 
 			<div class="header-meta d-flex clearfix justify-content-end">
-				<!-- Search Area -->
 				<div class="search-area">
 					<form action="#" method="post">
 						<input type="search" name="search" id="headerSearch"
@@ -97,13 +90,12 @@
 				<div class="favourite-area">
 					<a href="#"><img src="${pageContext.request.contextPath}/res/images/heart.svg" alt=""/></a>
 				</div>
-
 				<div class="user-login-info ">               
-					<a href="login"><img src="${pageContext.request.contextPath}/res/images/user.svg" alt=""/></a>
+					<a href="#"><img src="${pageContext.request.contextPath}/res/images/user.svg" alt=""/><!-- content --></a>
 				</div>
 				<div class="cart-area">
-					<a href="ShowCart.jsp" id="essenceCartBtn"><img src="${pageContext.request.contextPath}/res/images/bag.svg"
-						alt=""/><span></span></a>
+					<a href="#" id="essenceCartBtn"><img src="${pageContext.request.contextPath}/res/images/bag.svg"
+						alt=""/><span></span><!-- content --></a>
 				</div>
 			</div>
 
@@ -132,11 +124,9 @@
         </div>
     </div>
 
-    <!-- Footer Area -->
     <footer class="footer_area clearfix">
 		<div class="container">
 			<div class="row">
-				<!-- Single Widget Area -->
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area d-flex mb-30">
 						<!-- Logo -->
@@ -178,19 +168,19 @@
 								<input type="email" name="mail" class="mail"
 									placeholder="Your email here"/>
 								<button type="submit" class="submit">
-									<i class="fa fa-long-arrow-right" aria-hidden="true"><.</i>
+									<i class="fa fa-long-arrow-right" aria-hidden="true"><!--  Some content -->.</i>
 								</button>
 							</form>
 						</div>
 					</div>
 				</div>
-				
+				<!-- Single Widget Area -->
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area">
 						<div class="footer_social_area">
 							<a href="#" data-toggle="tooltip" data-placement="top"
 								title="Facebook"><i class="fa fa-facebook"
-								aria-hidden="true">.</i></a> <a href="#" data-toggle="tooltip"
+								aria-hidden="true"><!--  Some content -->.</i></a> <a href="#" data-toggle="tooltip"
 								data-placement="top" title="Instagram"><i
 								class="fa fa-instagram" aria-hidden="true">.</i></a> <a href="#"
 								data-toggle="tooltip" data-placement="top" title="Twitter"><i
@@ -207,9 +197,10 @@
 			<div class="row mt-5">
 				<div class="col-md-12 text-center">
 					<p>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						Copyright &#169;
 						<script>document.write(new Date().getFullYear());</script>
-						All rights reserved | EECS4413 from <a href="https://colorlib.com" target="_blank">Colorlib</a>
+						EECS4413 from <a href="https://colorlib.com" target="_blank">Colorlib</a>
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</p>
 				</div>
