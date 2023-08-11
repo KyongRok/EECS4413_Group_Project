@@ -28,23 +28,21 @@
 
 </head>
 <body>
-	<!-- Start -->
 	<header class="header_area">
 		<div
 			class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
-			<!-- Classy Menu -->
+		
 			<nav class="classy-navbar" id="essenceNav">
-				<!-- Logo -->
+				
 				<a class="nav-brand" href="Home.jsp"><img
 					src="${pageContext.request.contextPath}/res/images/logo.png" alt="" /></a>
 
 				<div class="classy-navbar-toggler">
-					<span class="navbarToggler"><span> <!-- content -->
-					</span><span> <!-- content -->
-					</span><span> <!-- content -->
+					<span class="navbarToggler"><span> 
+					</span><span> 
+					</span><span>
 					</span></span>
 				</div>
-				<!-- Menu -->
 				<div class="classy-menu">
 
 					<div class="classycloseIcon">
@@ -112,7 +110,6 @@
 			</nav>
 
 			<div class="header-meta d-flex clearfix justify-content-end">
-				<!-- Search Area -->
 				<div class="search-area">
 					<form action="#" method="post">
 						<input type="search" name="search" id="headerSearch"
@@ -130,14 +127,11 @@
 						alt="" /></a>
 				</div>
 				<div class="user-login-info">
-					<!-- Hidden form for sending a POST request to ProfileServlet -->
 					<form id="profileForm"
 						action="${pageContext.request.contextPath}/ProfileServlet"
 						method="post">
-						<!-- You can add any necessary hidden inputs here -->
 					</form>
 
-					<!-- Profile icon that triggers the form submission -->
 					<a href="#"
 						onclick="document.getElementById('profileForm').submit();"> <img
 						src="${pageContext.request.contextPath}/res/images/user.svg"
