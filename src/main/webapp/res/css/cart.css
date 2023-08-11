@@ -1,0 +1,74 @@
+@charset "ISO-8859-1";
+/* Add this CSS to your existing stylesheets */
+.cart-items-list {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-item {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.cart-item-details {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.item-image img {
+    max-width: 80px;
+    max-height: 80px;
+    margin-right: 10px;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-name {
+    font-weight: bold;
+}
+
+.item-price {
+    display: block;
+    margin-top: 5px;
+}
+
+.item-quantity {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.update-button {
+    background-color: rgb(255, 128, 192);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.minus-button {
+    border-radius: 50% 0 0 50%;
+}
+
+.plus-button {
+    border-radius: 0 50% 50% 0;
+}
+
+.item-remove {
+    margin-top: 5px;
+}
+
+.remove-button {
+    background-color: rgb(255, 128, 192);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Add any other styling as needed */
