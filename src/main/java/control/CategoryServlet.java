@@ -15,19 +15,29 @@ public class CategoryServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String category = request.getParameter("category");
         String gender = request.getParameter("gender"); // Add gender parameter
+        String search = request.getParameter("search");
         CategoryDAO categoryDAO = new CategoryDAOImp();
         String sort = request.getParameter("sort"); // Get sorting parameter
         if(gender != null) {
         	gender.toLowerCase();
         }
         List<Item> items;
-
+        
+        
         if (category != null && !category.isEmpty() && (gender == null)) {
             items = categoryDAO.searchByCategorieskeyword(category);
-        } else if (gender != null && (gender.equals("women") || gender.equals("men"))) {
+        }else if (gender != null && (gender.equals("women") || gender.equals("men"))) {
  
             items = categoryDAO.searchByCategoryNameAndGender(category, gender);
-        } else {
+        }else if(search != null) {
+        	if(search.equals("man")) {
+        		search = "men";
+        	}else if(search.equals("woman")) {
+        		search = "women";
+        		//incase user inputs man/woman since db is set to men/women
+        	}
+        	items = categoryDAO.searchByCategorieskeyword(search);
+        }else {
             response.sendRedirect(request.getContextPath() + "/Home.jsp");
             return;
         }
