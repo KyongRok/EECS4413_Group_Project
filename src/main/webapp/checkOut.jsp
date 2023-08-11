@@ -181,7 +181,6 @@
                                 <div class="col-12 mb-3">
                                     <label for="street_address">Address <span>*</span></label>
                                     <input type="text" class="form-control mb-3" id="street_address" value=""/>
-                                    <input type="text" class="form-control" id="street_address2" value=""/>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="postcode">ZIP <span></span></label>
