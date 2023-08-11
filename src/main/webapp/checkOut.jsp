@@ -15,7 +15,6 @@
     <meta name="description" content=""/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<title>Check Out</title>
 <link rel="icon"
 	href="${pageContext.request.contextPath}/res/images/feee.jpg"
@@ -33,7 +32,6 @@
 			class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
 			<!-- Classy Menu -->
 			<nav class="classy-navbar" id="essenceNav">
-				<!-- Logo -->
 				<a class="nav-brand" href="Home.jsp"><img
 					src="${pageContext.request.contextPath}/res/images/logo.png" alt=""/></a>
 			
@@ -116,7 +114,7 @@
 						<input type="search" name="search" id="headerSearch"
 							placeholder="Type for search"/>
 						<button type="submit">
-							<i class="fa fa-search" aria-hidden="true"><!--  Some content -->.</i>
+							<i class="fa fa-search" aria-hidden="true">.</i>
 						</button>
 					</form>
 				</div>
@@ -124,88 +122,18 @@
 				<div class="favourite-area">
 					<a href="#"><img src="${pageContext.request.contextPath}/res/images/heart.svg" alt=""/></a>
 				</div>
-				<!-- User Login Info -->
-				<!--                <div class="classynav">-->
 				<div class="user-login-info ">               
-					<a href="login"><img src="${pageContext.request.contextPath}/res/images/user.svg" alt=""/><!-- content --></a>
+					<a href="login"><img src="${pageContext.request.contextPath}/res/images/user.svg" alt=""/></a>
 				</div>
-				<!--                </div>-->
-				<!-- Cart Area -->
 				<div class="cart-area">
 					<a href="#" id="essenceCartBtn"><img src="${pageContext.request.contextPath}/res/images/bag.svg"
-						alt=""/><span>2</span><!-- content --></a>
+						alt=""/><span></span></a>
 				</div>
 			</div>
 
 		</div>
 	</header>
 
-
-	<div class="cart-bg-overlay"></div>
-
-	<div class="right-side-cart-area">
-
-		<!-- Cart Button -->
-		<div class="cart-button">
-			<a href="#" id="rightSideCart"><img src="${pageContext.request.contextPath}/res/images/bag.svg"
-				alt=""/><span>2</span></a>
-		</div>
-
-		<div class="cart-content d-flex">
-
-			<!-- Cart List Area -->
-			<div class="cart-list">
-				<!-- Single Cart Item -->
-				<div class="single-cart-item">
-					<a href="#" class="product-image"> <img
-						src="${pageContext.request.contextPath}/res/images/jeans.jpg" class="cart-thumb" alt=""/>
-							
-					<div class="cart-item-desc">
-							<span class="product-remove"><i class="fa fa-close"
-								aria-hidden="true"><!--  Some content -->.</i></span><span class="badge">Zara</span>
-							<h6>Black Jeans</h6>
-							<p class="price">$55.00</p>
-							<p class="size">Size: L</p>
-							<p class="color">Color: Black</p>
-							
-						</div>
-					</a>
-				</div>
-
-				<!-- Single Cart Item -->
-				<div class="single-cart-item">
-					<a href="#" class="product-image"> <img
-						src="${pageContext.request.contextPath}/res/images/flr.jpg" class="cart-thumb" alt=""/>
-							
-					<div class="cart-item-desc">
-							<span class="product-remove"><i class="fa fa-close"
-								aria-hidden="true"><!--  Some content -->.</i></span> <span class="badge">Zara</span>
-							<h6>Flower Bag</h6>
-							<p class="price">$35.00</p>
-							<p class="size">Size: M</p>
-							<p class="color">Color: Yellow</p>
-							
-						</div>
-					</a>
-				</div>
-			</div>
-
-			<!-- Cart Summary -->
-			<div class="cart-amount-summary">
-
-				<h2>Summary</h2>
-				<ul class="summary-table">
-					<li><span>sub-total:</span> <span>$100.00</span></li>
-					<li><span>discount:</span> <span>-10%</span></li>
-					<li><span>total:</span> <span>$93.99</span></li>
-				</ul>
-				<div class="checkout-btn mt-100">
-					<a href="checkOut.jsp" class="btn essence-btn">check out</a>
-				</div>
-			</div>
-		</div>
-	</div>
-    <!-- ##### Breadcumb Area Start ##### -->
     <div class="breadcumb_area bg-img" style="background-image: url(${pageContext.request.contextPath}/res/img/bg-img/breadcumb.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
@@ -217,8 +145,7 @@
             </div>
         </div>
     </div>
-    <!-- ##### Breadcumb Area End ##### -->
-    <!-- ##### Checkout Area Start ##### -->
+
     <div class="checkout_area section-padding-80">
         <div class="container">
             <div class="row">
@@ -239,10 +166,6 @@
                                 <div class="col-md-6 mb-3">
                                     <label for="last_name">Last Name <span>*</span></label>
                                     <input type="text" class="form-control" id="last_name" value="" required="required"/>
-                                </div>
-                                <div class="col-12 mb-3">
-                                    <label for="company">Company Name</label>
-                                    <input type="text" class="form-control" id="company" value=""/>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="country">Country <span>*</span></label>
@@ -271,10 +194,6 @@
                                 <div class="col-12 mb-3">
                                     <label for="phone_number">Phone<span>*</span></label>
                                     <input type="number" class="form-control" id="phone_number" min="0" value=""/>
-                                </div>
-                                <div class="col-12 mb-4">
-                                    <label for="email_address">Email <span>*</span></label>
-                                    <input type="email" class="form-control" id="email_address" value=""/>
                                 </div>
 
                                 <div class="col-12">
@@ -308,17 +227,7 @@
                         </ul>
 
                         <div id="accordion" role="tablist" class="mb-4">
-                            <div class="card">
-                                <div class="card-header" role="tab" id="headingOne">
-                                    <h6 class="mb-0">
-                                        <a data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne"><i class="fa fa-circle-o mr-3"><!--  Some content -->.</i>Paypal</a>
-                                    </h6>
-                                </div>
-
-                                <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
-                                    
-                                </div>
-                            </div>
+                          
                             <div class="card">
                                 <div class="card-header" role="tab" id="headingTwo">
                                     <h6 class="mb-0">
@@ -339,16 +248,7 @@
                                     
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="card-header" role="tab" id="headingFour">
-                                    <h6 class="mb-0">
-                                        <a class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour"><i class="fa fa-circle-o mr-3"><!--  Some content -->.</i>direct bank transfer</a>
-                                    </h6>
-                                </div>
-                                <div id="collapseFour" class="collapse show" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
-                                    
-                                </div>
-                            </div>
+                          
                         </div>
 
                         <a href="#" class="btn essence-btn">Place Order</a>
@@ -357,7 +257,7 @@
             </div>
         </div>
     </div>
-    <!-- ##### Checkout Area End ##### -->
+    
 	<footer class="footer_area clearfix">
 		<div class="container">
 			<div class="row">
@@ -403,19 +303,19 @@
 								<input type="email" name="mail" class="mail"
 									placeholder="Your email here"/>
 								<button type="submit" class="submit">
-									<i class="fa fa-long-arrow-right" aria-hidden="true"><!--  Some content -->.</i>
+									<i class="fa fa-long-arrow-right" aria-hidden="true">.</i>
 								</button>
 							</form>
 						</div>
 					</div>
 				</div>
-				<!-- Single Widget Area -->
+
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area">
 						<div class="footer_social_area">
 							<a href="#" data-toggle="tooltip" data-placement="top"
 								title="Facebook"><i class="fa fa-facebook"
-								aria-hidden="true"><!--  Some content -->.</i></a> <a href="#" data-toggle="tooltip"
+								aria-hidden="true">.</i></a> <a href="#" data-toggle="tooltip"
 								data-placement="top" title="Instagram"><i
 								class="fa fa-instagram" aria-hidden="true">.</i></a> <a href="#"
 								data-toggle="tooltip" data-placement="top" title="Twitter"><i
@@ -432,10 +332,9 @@
 			<div class="row mt-5">
 				<div class="col-md-12 text-center">
 					<p>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						Copyright &#169;
 						<script>document.write(new Date().getFullYear());</script>
-						All rights reserved | EECS4413 from <a href="https://colorlib.com" target="_blank">Colorlib</a>
+						EECS4413 from <a href="https://colorlib.com" target="_blank">Colorlib</a>
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</p>
 				</div>
