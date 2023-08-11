@@ -32,39 +32,50 @@ public class Cart {
 				index_of_item = i;
 			}
 		}
-		if(already_in_cart_flag == 1) {
-			int updated_qty = items.get(index_of_item).getQuantity() + 1;
-			items.get(index_of_item).setQuantity(updated_qty);
-			this.total_price -= item.getPrice() * (updated_qty -1);
-			this.total_price += item.getPrice() * updated_qty;
-		}else {
-			this.items.add(added);
-			this.total_price += item.getPrice();
-		}
+	    if (already_in_cart_flag == 1) {
+	        int updatedQty = items.get(index_of_item).getQuantity() + 1;
+	        int itemPrice = items.get(index_of_item).getPrice();
+	        
+	        items.get(index_of_item).setQuantity(updatedQty);
+	        total_price += itemPrice;  // Add the price for the new quantity
+	    } else {
+	        this.items.add(added);
+	        total_price += added.getPrice();  // Add the price of the added item
+	    }
 		
 	}
 	
 	public void removeFromCart(Item item) {
-		for(int i = 0; i<items.size(); i++) {
-			if(items.get(i).getItemId() == item.getItemId()) {
-				items.remove(i);
-			}
-		}
+	    for (int i = 0; i < items.size(); i++) {
+	        if (items.get(i).getItemId() == item.getItemId()) {
+	            int removedQty = items.get(i).getQuantity();
+	            int itemPrice = items.get(i).getPrice();
+	            
+	            total_price -= removedQty * itemPrice;  // Deduct the removed item's price
+
+	            items.remove(i);
+	            break;  // Once removed, exit the loop
+	        }
+	    }
 	}
 	
 	public void updateCart(Item item, int qty) {
-		for(int i =0; i < items.size(); i++) {
-			if(items.get(i).getItemId() == item.getItemId()) {
-				if(qty != 0) {
-					total_price -= item.getQuantity()*item.getPrice();
-					total_price += qty*item.getPrice();
-					items.get(i).setQuantity(qty);
-				}else {
-					removeFromCart(item);
-				}
-				
-			}
-		}
+	    for (int i = 0; i < items.size(); i++) {
+	        if (items.get(i).getItemId() == item.getItemId()) {
+	            int oldQty = items.get(i).getQuantity();
+	            int itemPrice = items.get(i).getPrice();
+
+	            total_price -= oldQty * itemPrice;  // Deduct the old quantity's price
+	            total_price += qty * itemPrice;     // Add the new quantity's price
+
+	            items.get(i).setQuantity(qty);
+	            
+	            // If quantity becomes 0, remove the item from the cart
+	            if (qty == 0) {
+	                items.remove(i);
+	            }
+	        }
+	    }
 	}
 	
 	public int getTotal() {
@@ -73,14 +84,6 @@ public class Cart {
 	
 	public List<Item> getCartItems(){
 		return this.items;
-	}
-	
-	public int getQty() {
-		int total_qty = 0;
-		for(int i = 0; i < items.size(); i++) {
-			total_qty += items.get(i).getQuantity();
-		}
-		return total_qty;
 	}
 
 }
