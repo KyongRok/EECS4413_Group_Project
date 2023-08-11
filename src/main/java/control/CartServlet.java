@@ -56,7 +56,7 @@ public class CartServlet extends HttpServlet {
 					for(int i = 0; i < cart.getCartItems().size(); i++) {
 						System.out.println(cart.getCartItems().get(i).getItemName());
 					}
-					request.getRequestDispatcher("/checkOut.jsp").forward(request, response);
+					request.getRequestDispatcher("/ShowCart.jsp").forward(request, response);
 				}
 		 }
 	}
