@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="description" content="" />
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -158,74 +159,7 @@
 		</div>
 	</header>
 
-	<div class="cart-bg-overlay"></div>
 
-	<div class="right-side-cart-area">
-
-		<!-- Cart Button -->
-		<div class="cart-button">
-			<a href="#" id="rightSideCart"><img
-				src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span></span></a>
-		</div>
-
-		<div class="cart-content d-flex">
-
-			<!-- Cart List Area -->
-			<div class="cart-list">
-				<!-- Single Cart Item -->
-				<div class="single-cart-item">
-					<a href="#" class="product-image"> <img
-						src="${pageContext.request.contextPath}/res/images/jeans.jpg"
-						class="cart-thumb" alt="" />
-
-						<div class="cart-item-desc">
-							<span class="product-remove"><i class="fa fa-close"
-								aria-hidden="true"> <!--  Some content -->.
-							</i></span><span class="badge">Zara</span>
-							<h6>Black Jeans</h6>
-							<p class="price">$55.00</p>
-							<p class="size">Size: L</p>
-							<p class="color">Color: Black</p>
-
-						</div>
-					</a>
-				</div>
-
-				<!-- Single Cart Item -->
-				<div class="single-cart-item">
-					<a href="#" class="product-image"> <img
-						src="${pageContext.request.contextPath}/res/images/flr.jpg"
-						class="cart-thumb" alt="" />
-
-						<div class="cart-item-desc">
-							<span class="product-remove"><i class="fa fa-close"
-								aria-hidden="true"> <!--  Some content -->.
-							</i></span> <span class="badge">Zara</span>
-							<h6>Flower Bag</h6>
-							<p class="price">$35.00</p>
-							<p class="size">Size: M</p>
-							<p class="color">Color: Yellow</p>
-
-						</div>
-					</a>
-				</div>
-			</div>
-
-			<!-- Cart Summary -->
-			<div class="cart-amount-summary">
-
-				<h2>Summary</h2>
-				<ul class="summary-table">
-					<li><span>sub-total:</span> <span>$100.00</span></li>
-					<li><span>discount:</span> <span>-10%</span></li>
-					<li><span>total:</span> <span>$93.99</span></li>
-				</ul>
-				<div class="checkout-btn mt-100">
-					<a href="checkOut.jsp" class="btn essence-btn">check out</a>
-				</div>
-			</div>
-		</div>
-	</div>
 	<!-- Display item details here -->
 	<br><br>
 	<div class="product-details">
@@ -237,9 +171,14 @@
 			<p class="product-brand">${item.brand}</p>
 			<p class="product-price">$${item.price}</p>
 			<p>${item.description}</p>
-			<button class="add-to-cart-btn">Add to Cart</button>
+			        <form method="post" action="CartServlet">
+            <input type="hidden" name="item_id" value="${item.itemId}">
+            <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
 		</div>
+		
 	</div>
+	<a href="Home.jsp">Back to Home</a>
 <br> <br>
 	<footer class="footer_area clearfix">
 		<div class="container">
