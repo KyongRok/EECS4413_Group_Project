@@ -93,8 +93,7 @@
 								<ul class="dropdown">
 									<li><a href="Home.jsp">Home</a></li>
 									<li><a href="shop">Shop</a></li>
-									<li><a href="single-product-details.html">Product
-											Details</a></li>
+									<li><a href="ShowCart.jsp">Cart</a></li>
 									<li><a href="checkOut.jsp">Checkout</a></li>
 
 								</ul></li>
@@ -106,13 +105,12 @@
 			</nav>
 
 			<div class="header-meta d-flex clearfix justify-content-end">
-				<!-- Search Area -->
 				<div class="search-area">
 					<form action="category" method="get">
 						<input type="text" name="search" id="headerSearch"
 							placeholder="Type for search" />
 						<button type="submit">
-							<i class="fa fa-search" aria-hidden="true"> <!--  Some content -->.
+							<i class="fa fa-search" aria-hidden="true"> .
 							</i>
 						</button>
 					</form>
