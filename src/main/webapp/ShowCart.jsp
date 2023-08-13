@@ -21,8 +21,6 @@
 	href="${pageContext.request.contextPath}/res/images/feee.jpg"
 	type="image/x-icon" />
 
-
-<!-- css-->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/res/css/core-style.css" />
 <link rel="stylesheet"
@@ -143,8 +141,7 @@
 								<ul class="dropdown">
 									<li><a href="Home.html">Home</a></li>
 									<li><a href="shop">Shop</a></li>
-									<li><a href="single-product-details.html">Product
-											Details</a></li>
+									<li><a href="ShowCart.jsp">Cart</a></li>
 									<li><a href="checkOut.jsp">Checkout</a></li>
 
 								</ul></li>
@@ -155,13 +152,15 @@
 				</div>
 			</nav>
 
+			
 			<div class="header-meta d-flex clearfix justify-content-end">
 				<div class="search-area">
 					<form action="category" method="get">
 						<input type="text" name="search" id="headerSearch"
 							placeholder="Type for search" />
 						<button type="submit">
-							<i class="fa fa-search" aria-hidden="true">.</i>
+							<i class="fa fa-search" aria-hidden="true"> <!--  Some content -->.
+							</i>
 						</button>
 					</form>
 				</div>
@@ -171,22 +170,32 @@
 						src="${pageContext.request.contextPath}/res/images/heart.svg"
 						alt="" /></a>
 				</div>
+				<div class="user-login-info">
+					<form id="profileForm"
+						action="${pageContext.request.contextPath}/ProfileServlet"
+						method="post">
+					</form>
 
-				<div class="user-login-info ">
-					<a href="login"><img
+					<a href="#"
+						onclick="document.getElementById('profileForm').submit();"> <img
 						src="${pageContext.request.contextPath}/res/images/user.svg"
+						alt="" />
+					</a>
+				</div>
+				<div class="user-login-info ">
+					<a href="${pageContext.request.contextPath}/LogoutServlet"><img
+						src="${pageContext.request.contextPath}/res/images/logout.png"
 						alt="" /></a>
 				</div>
-
+				
 				<div class="cart-area">
-					<a href="#" id="essenceCartBtn"><img
+					<a href="ShowCart.jsp" id="essenceCartBtn"><img
 						src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span></span></a>
 				</div>
 			</div>
 
 		</div>
 	</header>
-
 
 
 	<div class="breadcumb_area bg-img"
