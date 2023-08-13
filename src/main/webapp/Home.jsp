@@ -22,7 +22,6 @@
     <link rel="icon" href="${pageContext.request.contextPath}/res/images/feee.jpg" type="image/x-icon" />
 
 
-<!-- css-->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/res/css/core-style.css" />
 
@@ -115,7 +114,7 @@
 						<input type="text" name="search" id="headerSearch"
 							placeholder="Type for search" />
 						<button type="submit">
-							<i class="fa fa-search" aria-hidden="true"> <!--  Some content -->.
+							<i class="fa fa-search" aria-hidden="true"> .
 							</i>
 						</button>
 					</form>
@@ -143,7 +142,7 @@
 						src="${pageContext.request.contextPath}/res/images/logout.png"
 						alt="" /></a>
 				</div>
-				<!-- Cart Area -->
+				
 				<div class="cart-area">
 					<a href="ShowCart.jsp" id="essenceCartBtn"><img
 						src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span></span></a>
