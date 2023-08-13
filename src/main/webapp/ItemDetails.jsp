@@ -35,9 +35,9 @@
 					src="${pageContext.request.contextPath}/res/images/logo.png" alt="" /></a>
 
 				<div class="classy-navbar-toggler">
-					<span class="navbarToggler"><span> <!-- content -->
-					</span><span> <!-- content -->
-					</span><span> <!-- content -->
+					<span class="navbarToggler"><span> 
+					</span><span> 
+					</span><span> 
 					</span></span>
 				</div>
 				<!-- Menu -->
@@ -63,7 +63,6 @@
 										<li><a
 											href="${pageContext.request.contextPath}/category?gender=women&amp;category=street">Street
 												Style</a></li>
-										<!-- Other items for Women's collection -->
 									</ul>
 									<!-- Men's Collection -->
 									<ul class="single-mega cn-col-4">
@@ -76,7 +75,6 @@
 										<li><a
 											href="${pageContext.request.contextPath}/category?gender=men&amp;category=street">Street
 												Style</a></li>
-										<!-- Other items for Men's collection -->
 									</ul>
 									<ul class="single-mega cn-col-4">
 										<li class="title">Brands</li>
@@ -99,8 +97,7 @@
 								<ul class="dropdown">
 									<li><a href="Home.jsp">Home</a></li>
 									<li><a href="shop">Shop</a></li>
-									<li><a href="single-product-details.html">Product
-											Details</a></li>
+									<li><a href="ShowCart.jsp">Cart</a></li>
 									<li><a href="checkOut.jsp">Checkout</a></li>
 
 								</ul></li>
@@ -112,13 +109,12 @@
 			</nav>
 
 			<div class="header-meta d-flex clearfix justify-content-end">
-				<!-- Search Area -->
 				<div class="search-area">
 					<form action="category" method="get">
 						<input type="text" name="search" id="headerSearch"
 							placeholder="Type for search" />
 						<button type="submit">
-							<i class="fa fa-search" aria-hidden="true"> <!--  Some content -->.
+							<i class="fa fa-search" aria-hidden="true"> .
 							</i>
 						</button>
 					</form>
@@ -183,16 +179,13 @@
 	<footer class="footer_area clearfix">
 		<div class="container">
 			<div class="row">
-				<!-- Single Widget Area -->
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area d-flex mb-30">
-						<!-- Logo -->
 						<div class="footer-logo mr-50">
 							<a href="#"><img
 								src="${pageContext.request.contextPath}/res/images/logo.png"
 								alt="" /></a>
 						</div>
-						<!-- Footer Menu -->
 						<div class="footer_menu">
 							<ul>
 								<li><a href="shop.html">Shop</a></li>
@@ -201,7 +194,6 @@
 						</div>
 					</div>
 				</div>
-				<!-- Single Widget Area -->
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area mb-30">
 						<ul class="footer_widget_menu">
@@ -216,7 +208,6 @@
 			</div>
 
 			<div class="row align-items-end">
-				<!-- Single Widget Area -->
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area">
 						<div class="footer_heading mb-30">
@@ -227,20 +218,19 @@
 								<input type="email" name="mail" class="mail"
 									placeholder="Your email here" />
 								<button type="submit" class="submit">
-									<i class="fa fa-long-arrow-right" aria-hidden="true"> <!--  Some content -->.
+									<i class="fa fa-long-arrow-right" aria-hidden="true"> .
 									</i>
 								</button>
 							</form>
 						</div>
 					</div>
 				</div>
-				<!-- Single Widget Area -->
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area">
 						<div class="footer_social_area">
 							<a href="#" data-toggle="tooltip" data-placement="top"
 								title="Facebook"><i class="fa fa-facebook"
-								aria-hidden="true"> <!--  Some content -->.
+								aria-hidden="true"> .
 							</i></a> <a href="#" data-toggle="tooltip" data-placement="top"
 								title="Instagram"><i class="fa fa-instagram"
 								aria-hidden="true">.</i></a> <a href="#" data-toggle="tooltip"
