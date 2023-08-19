@@ -37,7 +37,7 @@
 					</span><span> 
 					</span></span>
 				</div>
-				<!-- Menu -->
+
 				<div class="classy-menu">
 
 					<div class="classycloseIcon">
@@ -139,7 +139,7 @@
 						src="${pageContext.request.contextPath}/res/images/logout.png"
 						alt="" /></a>
 				</div>
-				<!-- Cart Area -->
+
 				<div class="cart-area">
 					<a href="ShowCart.jsp" id="essenceCartBtn"><img
 						src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span></span></a>
@@ -150,8 +150,6 @@
 	</header>
 
 
-
-	<!-- Sorting Form -->
 	<form id="sortForm"
 		action="${pageContext.request.contextPath}/itemsByBrand" method="get">
 		<input type="hidden" name="brand"
@@ -283,7 +281,7 @@
 							document.write(new Date().getFullYear());
 						</script>
 						EECS4413 from <a href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
 					</p>
 				</div>
 			</div>
