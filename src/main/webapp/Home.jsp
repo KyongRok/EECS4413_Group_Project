@@ -64,7 +64,7 @@
 										<li><a
 											href="${pageContext.request.contextPath}/category?gender=women&amp;category=street">Street
 												Style</a></li>
-										<!-- Other items for Women's collection -->
+
 									</ul>
 									<!-- Men's Collection -->
 									<ul class="single-mega cn-col-4">
@@ -77,7 +77,7 @@
 										<li><a
 											href="${pageContext.request.contextPath}/category?gender=men&amp;category=street">Street
 												Style</a></li>
-										<!-- Other items for Men's collection -->
+
 									</ul>
 									<ul class="single-mega cn-col-4">
 										<li class="title">Brands</li>
@@ -96,8 +96,7 @@
 								<ul class="dropdown">
 									<li><a href="Home.jsp">Home</a></li>
 									<li><a href="shop">Shop</a></li>
-									<li><a href="single-product-details.html">Product
-											Details</a></li>
+									<li><a href="ShowCart.jsp">Cart</a></li>
 									<li><a href="checkOut.jsp">Checkout</a></li>
 
 								</ul></li>
@@ -363,7 +362,7 @@
 							document.write(new Date().getFullYear());
 						</script>
 						<a href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					
 					</p>
 				</div>
 			</div>
