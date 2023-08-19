@@ -21,8 +21,6 @@
 
     <link rel="icon" href="${pageContext.request.contextPath}/res/images/feee.jpg" type="image/x-icon" />
 
-
-<!-- css-->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/res/css/core-style.css" />
 
@@ -65,7 +63,7 @@
 										<li><a
 											href="${pageContext.request.contextPath}/category?gender=women&amp;category=street">Street
 												Style</a></li>
-										<!-- Other items for Women's collection -->
+
 									</ul>
 									<!-- Men's Collection -->
 									<ul class="single-mega cn-col-4">
@@ -78,7 +76,7 @@
 										<li><a
 											href="${pageContext.request.contextPath}/category?gender=men&amp;category=street">Street
 												Style</a></li>
-										<!-- Other items for Men's collection -->
+
 									</ul>
 									<ul class="single-mega cn-col-4">
 										<li class="title">Brands</li>
@@ -194,7 +192,7 @@
 			</div>
 
 			<div class="row align-items-end">
-				<!-- Single Widget Area -->
+
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area">
 						<div class="footer_heading mb-30">
@@ -211,7 +209,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- Single Widget Area -->
+
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area">
 						<div class="footer_social_area">
@@ -240,7 +238,7 @@
 							document.write(new Date().getFullYear());
 						</script>
 						<a href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
 					</p>
 				</div>
 			</div>
