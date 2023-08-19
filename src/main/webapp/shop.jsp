@@ -13,7 +13,9 @@
 
 <title>Bloom - Fashion Store</title>
 
-    <link rel="icon" href="${pageContext.request.contextPath}/res/images/feee.jpg" type="image/x-icon" />
+<link rel="icon"
+	href="${pageContext.request.contextPath}/res/images/feee.jpg"
+	type="image/x-icon" />
 
 
 <link rel="stylesheet"
@@ -29,9 +31,7 @@
 					src="${pageContext.request.contextPath}/res/images/logo.png" alt="" /></a>
 
 				<div class="classy-navbar-toggler">
-					<span class="navbarToggler"><span> 
-					</span><span> 
-					</span><span> 
+					<span class="navbarToggler"><span> </span><span> </span><span>
 					</span></span>
 				</div>
 				<!-- Menu -->
@@ -110,8 +110,7 @@
 						<input type="text" name="search" id="headerSearch"
 							placeholder="Type for search" />
 						<button type="submit">
-							<i class="fa fa-search" aria-hidden="true"> .
-							</i>
+							<i class="fa fa-search" aria-hidden="true"> . </i>
 						</button>
 					</form>
 				</div>
@@ -124,8 +123,7 @@
 				<div class="user-login-info">
 					<form id="profileForm"
 						action="${pageContext.request.contextPath}/ProfileServlet"
-						method="post">
-					</form>
+						method="post"></form>
 
 					<a href="#"
 						onclick="document.getElementById('profileForm').submit();"> <img
@@ -164,38 +162,48 @@
 	<br>
 	<br>
 	<br>
-    <ul class="item-grid">
-        <% List<Item> items = (List<Item>) request.getAttribute("items"); %>
-        <% for (Item item : items) { %>
-            <li class="item">
-            <form method = 'post' action="CartServlet">
-                <a href="${pageContext.request.contextPath}/ItemDetails?itemId=<%=item.getItemId()%>">
-                    <img src="<%= item.getPicture() %>" alt="<%= item.getItemName() %>" width="200" height="200" />
-                </a>
-                <div class="item-details">
-                    <h3><%= item.getItemName() %></h3>
-                    <p class="item-price"><%= item.getPrice() %> CAD</p>
-                    <input type='hidden' name = 'item_id' value ="<%= item.getItemId() %>">
-                    <input type="submit" value='Add To Cart'>
-                </div>
-                </form>
-            </li>
-            
-        <% } %>
-    </ul>
+	<ul class="item-grid">
+		<%
+		List<Item> items = (List<Item>) request.getAttribute("items");
+		%>
+		<%
+		for (Item item : items) {
+		%>
+		<li class="item">
+			<form method='post' action="CartServlet">
+				<a
+					href="${pageContext.request.contextPath}/ItemDetails?itemId=<%=item.getItemId()%>">
+					<img src="<%=item.getPicture()%>" alt="<%=item.getItemName()%>"
+					width="200" height="200" />
+				</a>
+				<div class="item-details">
+					<h3><%=item.getItemName()%></h3>
+					<p class="item-price"><%=item.getPrice()%>
+						CAD
+					</p>
+					<input type='hidden' name='item_id' value="<%=item.getItemId()%>">
+					<input type="submit" value='Add To Cart'>
+				</div>
+			</form>
+		</li>
+
+		<%
+		}
+		%>
+	</ul>
 	<footer class="footer_area clearfix">
 		<div class="container">
 			<div class="row">
-				<!-- Single Widget Area -->
+
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area d-flex mb-30">
-						<!-- Logo -->
+
 						<div class="footer-logo mr-50">
 							<a href="#"><img
 								src="${pageContext.request.contextPath}/res/images/logo.png"
 								alt="" /></a>
 						</div>
-						<!-- Footer Menu -->
+
 						<div class="footer_menu">
 							<ul>
 								<li><a href="shop">Shop</a></li>
@@ -204,7 +212,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- Single Widget Area -->
+
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area mb-30">
 						<ul class="footer_widget_menu">
@@ -230,27 +238,23 @@
 								<input type="email" name="mail" class="mail"
 									placeholder="Your email here" />
 								<button type="submit" class="submit">
-									<i class="fa fa-long-arrow-right" aria-hidden="true">.
-									</i>
+									<i class="fa fa-long-arrow-right" aria-hidden="true">. </i>
 								</button>
 							</form>
 						</div>
 					</div>
 				</div>
-				<!-- Single Widget Area -->
+
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area">
 						<div class="footer_social_area">
 							<a href="#" data-toggle="tooltip" data-placement="top"
 								title="Facebook"><i class="fa fa-facebook"
-								aria-hidden="true"> <!--  Some content -->.
-							</i></a> <a href="#" data-toggle="tooltip" data-placement="top"
-								title="Instagram"><i class="fa fa-instagram"
-								aria-hidden="true">.</i></a> <a href="#" data-toggle="tooltip"
-								data-placement="top" title="Twitter"><i
-								class="fa fa-twitter" aria-hidden="true">.</i></a> <a href="#"
-								data-toggle="tooltip" data-placement="top" title="Pinterest"><i
-								class="fa fa-pinterest" aria-hidden="true">.</i></a> <a href="#"
+								aria-hidden="true">. </i></a> <a href="#" data-toggle="tooltip"
+								data-placement="top" title="Instagram"><i
+								class="fa fa-instagram" aria-hidden="true">.</i></a> <a href="#"
+								data-toggle="tooltip" data-placement="top" title="Twitter"><i
+								class="fa fa-twitter" aria-hidden="true">.</i></a>  <a href="#"
 								data-toggle="tooltip" data-placement="top" title="Youtube"><i
 								class="fa fa-youtube-play" aria-hidden="true">.</i></a>
 						</div>
