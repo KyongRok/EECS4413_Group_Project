@@ -17,7 +17,7 @@
 	href="${pageContext.request.contextPath}/res/images/feee.jpg"
 	type="image/x-icon" />
 
-<!-- css-->
+
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/res/css/core-style.css" />
 <link rel="stylesheet"
@@ -28,9 +28,8 @@
 	<header class="header_area">
 		<div
 			class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
-			<!-- Classy Menu -->
+		
 			<nav class="classy-navbar" id="essenceNav">
-				<!-- Logo -->
 				<a class="nav-brand" href="Home.jsp"><img
 					src="${pageContext.request.contextPath}/res/images/logo.png" alt="" /></a>
 
@@ -40,7 +39,7 @@
 					</span><span> 
 					</span></span>
 				</div>
-				<!-- Menu -->
+
 				<div class="classy-menu">
 
 					<div class="classycloseIcon">
@@ -109,47 +108,20 @@
 			</nav>
 
 			<div class="header-meta d-flex clearfix justify-content-end">
-				<div class="search-area">
-					<form action="category" method="get">
-						<input type="text" name="search" id="headerSearch"
-							placeholder="Type for search" />
-						<button type="submit">
-							<i class="fa fa-search" aria-hidden="true"> .
-							</i>
-						</button>
-					</form>
-				</div>
-
-				<div class="favourite-area">
-					<a href="#"><img
-						src="${pageContext.request.contextPath}/res/images/heart.svg"
-						alt="" /></a>
-				</div>
+				
 				<div class="user-login-info">
-					<!-- Hidden form for sending a POST request to ProfileServlet -->
-					<form id="profileForm"
-						action="${pageContext.request.contextPath}/ProfileServlet"
-						method="post">
-						<!-- You can add any necessary hidden inputs here -->
-					</form>
-
-					<!-- Profile icon that triggers the form submission -->
-					<a href="#"
-						onclick="document.getElementById('profileForm').submit();"> <img
-						src="${pageContext.request.contextPath}/res/images/user.svg"
-						alt="" />
-					</a>
+					
 				</div>
 				<div class="user-login-info ">
 					<a href="${pageContext.request.contextPath}/LogoutServlet"><img
 						src="${pageContext.request.contextPath}/res/images/logout.png"
 						alt="" /></a>
 				</div>
-				<!-- Cart Area -->
 				<div class="cart-area">
-					<a href="#" id="essenceCartBtn"><img
+					<a href="ShowCart.jsp" id="essenceCartBtn"><img
 						src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span></span></a>
 				</div>
+				
 			</div>
 
 		</div>
@@ -248,13 +220,11 @@
 			<div class="row mt-5">
 				<div class="col-md-12 text-center">
 					<p>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						Copyright &#169;
 						<script>
 							document.write(new Date().getFullYear());
 						</script>
 						EECS4413 from <a href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</p>
 				</div>
 			</div>
