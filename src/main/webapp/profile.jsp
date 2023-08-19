@@ -77,25 +77,11 @@
 			</nav>
 
 			<div class="header-meta d-flex clearfix justify-content-end">
-				<div class="search-area">
-					<form action="category" method="get">
-						<input type="text" name="search" id="headerSearch"
-							placeholder="Type for search" />
-						<button type="submit">
-							<i class="fa fa-search" aria-hidden="true">.</i>
-						</button>
-					</form>
-				</div>
-
-				<div class="favourite-area">
-					<a href="#"><img src="${pageContext.request.contextPath}/res/images/heart.svg" alt=""/></a>
-				</div>
-				<div class="user-login-info ">               
-					<a href="#"><img src="${pageContext.request.contextPath}/res/images/user.svg" alt=""/><!-- content --></a>
-				</div>
-				<div class="cart-area">
-					<a href="#" id="essenceCartBtn"><img src="${pageContext.request.contextPath}/res/images/bag.svg"
-						alt=""/><span></span><!-- content --></a>
+				
+				<div class="user-login-info ">
+					<a href="${pageContext.request.contextPath}/LogoutServlet"><img
+						src="${pageContext.request.contextPath}/res/images/logout.png"
+						alt="" /></a>
 				</div>
 			</div>
 
@@ -129,11 +115,9 @@
 			<div class="row">
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area d-flex mb-30">
-						<!-- Logo -->
 						<div class="footer-logo mr-50">
 							<a href="#"><img src="${pageContext.request.contextPath}/res/images/logo.png" alt=""/></a>
 						</div>
-						<!-- Footer Menu -->
 						<div class="footer_menu">
 							<ul>
 								<li><a href="shop.html">Shop</a></li>
@@ -142,7 +126,6 @@
 						</div>
 					</div>
 				</div>
-				<!-- Single Widget Area -->
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area mb-30">
 						<ul class="footer_widget_menu">
@@ -157,7 +140,6 @@
 			</div>
 
 			<div class="row align-items-end">
-				<!-- Single Widget Area -->
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area">
 						<div class="footer_heading mb-30">
@@ -174,13 +156,12 @@
 						</div>
 					</div>
 				</div>
-				<!-- Single Widget Area -->
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area">
 						<div class="footer_social_area">
 							<a href="#" data-toggle="tooltip" data-placement="top"
 								title="Facebook"><i class="fa fa-facebook"
-								aria-hidden="true"><!--  Some content -->.</i></a> <a href="#" data-toggle="tooltip"
+								aria-hidden="true">.</i></a> <a href="#" data-toggle="tooltip"
 								data-placement="top" title="Instagram"><i
 								class="fa fa-instagram" aria-hidden="true">.</i></a> <a href="#"
 								data-toggle="tooltip" data-placement="top" title="Twitter"><i
@@ -197,11 +178,9 @@
 			<div class="row mt-5">
 				<div class="col-md-12 text-center">
 					<p>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						Copyright &#169;
 						<script>document.write(new Date().getFullYear());</script>
 						EECS4413 from <a href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</p>
 				</div>
 			</div>
