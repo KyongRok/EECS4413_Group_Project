@@ -139,7 +139,7 @@
 								</div></li>
 							<li><a href="#">Pages</a>
 								<ul class="dropdown">
-									<li><a href="Home.html">Home</a></li>
+									<li><a href="Home.jsp">Home</a></li>
 									<li><a href="shop">Shop</a></li>
 									<li><a href="ShowCart.jsp">Cart</a></li>
 									<li><a href="checkOut.jsp">Checkout</a></li>
@@ -152,15 +152,14 @@
 				</div>
 			</nav>
 
-			
+
 			<div class="header-meta d-flex clearfix justify-content-end">
 				<div class="search-area">
 					<form action="category" method="get">
 						<input type="text" name="search" id="headerSearch"
 							placeholder="Type for search" />
 						<button type="submit">
-							<i class="fa fa-search" aria-hidden="true"> <!--  Some content -->.
-							</i>
+							<i class="fa fa-search" aria-hidden="true">. </i>
 						</button>
 					</form>
 				</div>
@@ -170,24 +169,13 @@
 						src="${pageContext.request.contextPath}/res/images/heart.svg"
 						alt="" /></a>
 				</div>
-				<div class="user-login-info">
-					<form id="profileForm"
-						action="${pageContext.request.contextPath}/ProfileServlet"
-						method="post">
-					</form>
 
-					<a href="#"
-						onclick="document.getElementById('profileForm').submit();"> <img
-						src="${pageContext.request.contextPath}/res/images/user.svg"
-						alt="" />
-					</a>
-				</div>
 				<div class="user-login-info ">
 					<a href="${pageContext.request.contextPath}/LogoutServlet"><img
 						src="${pageContext.request.contextPath}/res/images/logout.png"
 						alt="" /></a>
 				</div>
-				
+
 				<div class="cart-area">
 					<a href="ShowCart.jsp" id="essenceCartBtn"><img
 						src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span></span></a>
@@ -329,8 +317,7 @@
 								<input type="email" name="mail" class="mail"
 									placeholder="Your email here" />
 								<button type="submit" class="submit">
-									<i class="fa fa-long-arrow-right" aria-hidden="true"> <!--  Some content -->.
-									</i>
+									<i class="fa fa-long-arrow-right" aria-hidden="true"> . </i>
 								</button>
 							</form>
 						</div>
@@ -362,9 +349,8 @@
 					<p>
 						Copyright &#169;
 						<script>document.write(new Date().getFullYear());</script>
-						EECS4413 from <a href="https://colorlib.com"
-							target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						EECS4413 from <a href="https://colorlib.com" target="_blank">Colorlib</a>
+
 					</p>
 				</div>
 			</div>
