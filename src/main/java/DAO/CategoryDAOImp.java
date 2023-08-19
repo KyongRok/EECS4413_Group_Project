@@ -247,6 +247,7 @@ public class CategoryDAOImp implements CategoryDAO {
 	    return items;
 	}
 	
+	@Override
 	public Item getItemById(int id) {
 		init();
 		
@@ -274,7 +275,7 @@ public class CategoryDAOImp implements CategoryDAO {
 	    connection.closeConnection(con);
 	    return item;
 	}
-	
+	@Override
 	public List<sale> getsales(){
 		 init();
 		    List<sale> items = new ArrayList<>();
@@ -295,7 +296,7 @@ public class CategoryDAOImp implements CategoryDAO {
 		    connection.closeConnection(con);
 		    return items;
 	}
-	
+	@Override
 	public void insertIntoSales(List<Item> item) {
 		init();
 		  
@@ -303,15 +304,16 @@ public class CategoryDAOImp implements CategoryDAO {
 			int qty = item.get(i).getQuantity();
 			int id = item.get(i).getItemId();
 			 String sql = "UPDATE SALES "
-			 		+ "SET sale_qty = sale_qty + " + qty + " where sale_qty.item_id = " + id;
+			 		+ "SET sale_qty = sale_qty + " + qty + " where item_id = " + id;
 		try {
 			 PreparedStatement stmt = con.prepareStatement(sql);
 			  stmt.execute();	  
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	    }
-	    connection.closeConnection(con);	
 		}
+	    connection.closeConnection(con);	
+		
 	}
 	
 }

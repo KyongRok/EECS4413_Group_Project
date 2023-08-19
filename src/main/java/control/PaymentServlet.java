@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import DAO.CategoryDAO;
+import DAO.CategoryDAOImp;
 import model.Cart;
 
 @WebServlet("/PaymentServlet")
@@ -18,6 +20,8 @@ public class PaymentServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         Cart cart = (Cart) session.getAttribute("cart");
+        CategoryDAO d = new CategoryDAOImp();
+       
         
         String cardNumber = request.getParameter("credit_card");
         String cvvStr = request.getParameter("cvv");
@@ -28,22 +32,26 @@ public class PaymentServlet extends HttpServlet {
             cvv = -1; // Invalid CVV
         }
         
-//        paymentCounter++;
-//        boolean paymentApproved = true;
-//        
-//        // Dummy algorithm: Deny every 3rd payment request
-//        if (paymentCounter % 3 == 0) {
-//            paymentApproved = false;
-//        }
+        
+        boolean paymentApproved = true;
+        
+        // Dummy algorithm: Deny every 3rd payment request
+        if (paymentCounter == 2) {
+            paymentApproved = false;
+            paymentCounter = 0;
+       }else {
+    	   paymentCounter++;
+    	   
+       }
 
-
-       // if (paymentApproved) {
+        if (paymentApproved) {
+        	d.insertIntoSales(cart.getCartItems());
             cart = new Cart();
             session.setAttribute("cart", cart);
             request.setAttribute("paymentMessage", "Order Successfully Completed.");
-     //   } else {
-        //    request.setAttribute("paymentMessage", "Credit Card Authorization Failed.");
-      //  }
+        } else {
+            request.setAttribute("paymentMessage", "Credit Card Authorization Failed.");
+       }
   
         request.getRequestDispatcher("/PaymentResult.jsp").forward(request, response);
     }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import model.Category;
 import model.Item;
+import model.sale;
 
 public interface CategoryDAO {
 	public List<Item> getAllCategories();
@@ -16,5 +17,7 @@ public interface CategoryDAO {
 	public List<Item> sortAlpZToA(List<Item> items);
 	List<Item> getItemsByBrand(String brand);
 	public Item getItemById(int id);
+	List<sale> getsales();
+	void insertIntoSales(List<Item> item);
 	
 }
