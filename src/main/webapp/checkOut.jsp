@@ -21,8 +21,6 @@
 	href="${pageContext.request.contextPath}/res/images/feee.jpg"
 	type="image/x-icon" />
 
-
-<!-- css-->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/res/css/core-style.css" />
 
@@ -106,28 +104,14 @@
 			</nav>
 
 			<div class="header-meta d-flex clearfix justify-content-end">
-				<div class="search-area">
-					<form action="category" method="get">
-						<input type="text" name="search" id="headerSearch"
-							placeholder="Type for search" />
-						<button type="submit">
-							<i class="fa fa-search" aria-hidden="true"> . </i>
-						</button>
-					</form>
-				</div>
-
-				<div class="favourite-area">
-					<a href="#"><img
-						src="${pageContext.request.contextPath}/res/images/heart.svg"
-						alt="" /></a>
-				</div>
+			
 				<div class="user-login-info ">
-					<a href="login"><img
-						src="${pageContext.request.contextPath}/res/images/user.svg"
+					<a href="${pageContext.request.contextPath}/LogoutServlet"><img
+						src="${pageContext.request.contextPath}/res/images/logout.png"
 						alt="" /></a>
 				</div>
 				<div class="cart-area">
-					<a href="#" id="essenceCartBtn"><img
+					<a href="ShowCart.jsp" id="essenceCartBtn"><img
 						src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span></span></a>
 				</div>
 			</div>
@@ -242,7 +226,6 @@
 											href="#collapseThree" aria-expanded="false"
 											aria-controls="collapseThree"><i
 											class="fa fa-circle-o mr-3">
-												<!--  Some content -->.
 										</i>credit card</a>
 									</h6>
 								</div>
@@ -353,7 +336,7 @@
 							document.write(new Date().getFullYear());
 						</script>
 						EECS4413 from <a href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
 					</p>
 				</div>
 			</div>
