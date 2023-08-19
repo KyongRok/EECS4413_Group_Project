@@ -16,7 +16,6 @@
 	href="${pageContext.request.contextPath}/res/images/feee.jpg"
 	type="image/x-icon" />
 
-<!-- css-->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/res/css/core-style.css" />
 
@@ -25,9 +24,9 @@
 	<header class="header_area">
 		<div
 			class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
-			<!-- Classy Menu -->
+
 			<nav class="classy-navbar" id="essenceNav">
-				<!-- Logo -->
+
 				<a class="nav-brand" href="Home.jsp"><img
 					src="${pageContext.request.contextPath}/res/images/logo.png" alt="" /></a>
 
@@ -37,7 +36,7 @@
 					</span><span> 
 					</span></span>
 				</div>
-				<!-- Menu -->
+
 				<div class="classy-menu">
 
 					<div class="classycloseIcon">
@@ -139,7 +138,7 @@
 						src="${pageContext.request.contextPath}/res/images/logout.png"
 						alt="" /></a>
 				</div>
-				<!-- Cart Area -->
+
 				<div class="cart-area">
 					<a href="ShowCart.jsp" id="essenceCartBtn"><img
 						src="${pageContext.request.contextPath}/res/images/bag.svg" alt="" /><span></span></a>
@@ -215,16 +214,16 @@
 	<footer class="footer_area clearfix">
 		<div class="container">
 			<div class="row">
-				<!-- Single Widget Area -->
+
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area d-flex mb-30">
-						<!-- Logo -->
+
 						<div class="footer-logo mr-50">
 							<a href="#"><img
 								src="${pageContext.request.contextPath}/res/images/logo.png"
 								alt="" /></a>
 						</div>
-						<!-- Footer Menu -->
+
 						<div class="footer_menu">
 							<ul>
 								<li><a href="shop">Shop</a></li>
@@ -233,7 +232,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- Single Widget Area -->
+
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area mb-30">
 						<ul class="footer_widget_menu">
@@ -248,7 +247,7 @@
 			</div>
 
 			<div class="row align-items-end">
-				<!-- Single Widget Area -->
+
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area">
 						<div class="footer_heading mb-30">
@@ -266,7 +265,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- Single Widget Area -->
+
 				<div class="col-12 col-md-6">
 					<div class="single_widget_area">
 						<div class="footer_social_area">
@@ -295,7 +294,7 @@
 							document.write(new Date().getFullYear());
 						</script>
 						EECS4413 from <a href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
 					</p>
 				</div>
 			</div>
