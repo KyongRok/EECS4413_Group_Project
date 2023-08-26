@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import DAO.UserDAOImp;
+import model.Cart;
 import model.User_info;
 @WebServlet("/registerServlet")
 public class registerServlet extends HttpServlet {
@@ -28,6 +29,7 @@ public class registerServlet extends HttpServlet {
         
         UserDAOImp userDAO = new UserDAOImp();
         User_info u = new User_info();
+        Cart cart = new Cart();
         u.setFirst_name(fn);
         u.setLast_name(ln);
         u.setPassword(password);
@@ -39,6 +41,7 @@ public class registerServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
         synchronized (session) {
             session.setAttribute("user", u);
+            session.setAttribute("cart", cart);
             request.getRequestDispatcher("Home.jsp").forward(request, response);
             }
             //send to homeServlet and in there we check the user info and -> show give a somethign
