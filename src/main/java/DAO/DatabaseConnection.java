@@ -14,7 +14,7 @@ public class DatabaseConnection {
 			Class.forName("org.sqlite.JDBC");
 		} catch (ClassNotFoundException ex) {
 		}
-		 return DriverManager.getConnection("jdbc:sqlite:C:\\Users\\kyong\\git\\EECS4413_Group_Project\\src\\main\\webapp\\database.db");
+		 return DriverManager.getConnection("jdbc:sqlite:/appdata/database.db");
 	}
 
 	public void closeConnection(Connection connection) {
