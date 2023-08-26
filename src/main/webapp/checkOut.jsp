@@ -90,7 +90,7 @@
 								</div></li>
 							<li><a href="#">Pages</a>
 								<ul class="dropdown">
-									<li><a href="Home.html">Home</a></li>
+									<li><a href="Home.jsp">Home</a></li>
 									<li><a href="shop">Shop</a></li>
 									<li><a href="ShowCart.jsp">Cart</a></li>
 									<li><a href="checkOut.jsp">Checkout</a></li>
